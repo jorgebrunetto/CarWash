@@ -18,7 +18,7 @@ class MainScreen extends Component {
 
     static navigationOptions = {
         headerLeft: <Icon name="chevron-left" color={'#53c2fa'} size={32} style={{ paddingLeft: 10 }} />,
-        title: "Instagram",
+        title: "Jorge Brunetto",
         headerRight: <Icon name="settings" color={'#53c2fa'} size={24} style={{ paddingRight: 10 }} />,
         headerStyle: {
             borderBottomColor: '#53c2fa',
