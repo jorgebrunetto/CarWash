@@ -40,7 +40,7 @@ const AppTabNavigator = createBottomTabNavigator(
             screen: MapTab,
             navigationOptions: {
                 tabBarIcon: ({ tintColor }) => (
-                    <Icon size={24} style={{ color: tintColor }} name="map-marker-outline" />
+                    <Icon size={24} style={{ color: tintColor }} name="map-search-outline" />
                 ),
             }
         },
@@ -48,7 +48,7 @@ const AppTabNavigator = createBottomTabNavigator(
             screen: ListTab,
             navigationOptions: {
                 tabBarIcon: ({ tintColor }) => (
-                    <Icon size={24} style={{ color: tintColor }} name="view-list" />
+                    <Icon size={24} style={{ color: tintColor }} name="equal" />
                 ),
             }
         },
@@ -56,7 +56,7 @@ const AppTabNavigator = createBottomTabNavigator(
             screen: RageTab,
             navigationOptions: {
                 tabBarIcon: ({ tintColor }) => (
-                    <Icon size={32} style={{ color: tintColor }} name="target" />
+                    <Icon size={32} style={{ color: tintColor }} name="heart-outline" />
                 ),
             }
         },
@@ -64,7 +64,7 @@ const AppTabNavigator = createBottomTabNavigator(
             screen: NotifyTab,
             navigationOptions: {
                 tabBarIcon: ({ tintColor }) => (
-                    <Icon size={24} style={{ color: tintColor }} name="email-outline" />
+                    <Icon size={24} style={{ color: tintColor }} name="bell-outline" />
                 ),
             }
         },
@@ -85,7 +85,7 @@ const AppTabNavigator = createBottomTabNavigator(
                 borderTopWidth: 0,
             },
             initialRouteName: 'HomeTab',
-            activeTintColor: '#f85679',
+            activeTintColor: '#ffb900 ',
             inactiveTintColor: '#fff',
         }
     }
