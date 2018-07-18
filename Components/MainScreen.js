@@ -20,10 +20,10 @@ class MainScreen extends Component {
         headerLeft: <Icon name="chevron-left" color={'#53c2fa'} size={32} style={{ paddingLeft: 10 }} />,
         title: "Jorge Brunetto",
         headerRight: <Icon name="settings" color={'#53c2fa'} size={24} style={{ paddingRight: 10 }} />,
-        headerStyle: {
-            borderBottomColor: '#53c2fa',
-            borderBottomWidth: 2,
-        }
+        // headerStyle: {
+        //     borderBottomColor: '#53c2fa',
+        //     borderBottomWidth: 2,
+        // }
     }
 
     render() {
@@ -40,7 +40,7 @@ const AppTabNavigator = createBottomTabNavigator(
             screen: MapTab,
             navigationOptions: {
                 tabBarIcon: ({ tintColor }) => (
-                    <Icon size={24} style={{ color: tintColor }} name="map-search-outline" />
+                    <Icon size={24} style={{ color: tintColor }} name="map-marker-outline" />
                 ),
             }
         },
@@ -56,7 +56,7 @@ const AppTabNavigator = createBottomTabNavigator(
             screen: RageTab,
             navigationOptions: {
                 tabBarIcon: ({ tintColor }) => (
-                    <Icon size={32} style={{ color: tintColor }} name="heart-outline" />
+                    <Icon size={24} style={{ color: tintColor }} name="heart-outline" />
                 ),
             }
         },
@@ -82,10 +82,10 @@ const AppTabNavigator = createBottomTabNavigator(
             showLabel: false,
             style: {
                 backgroundColor: '#53c2fa',
-                borderTopWidth: 0,
+                // borderTopWidth: 0,
             },
             initialRouteName: 'HomeTab',
-            activeTintColor: '#ffb900 ',
+            activeTintColor: '#ffb900',
             inactiveTintColor: '#fff',
         }
     }
