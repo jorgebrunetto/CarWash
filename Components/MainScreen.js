@@ -4,6 +4,7 @@ import {
     Platform
 } from "react-native";
 
+import LoginTab from './AppTabNavigator/LoginTab'
 import MapTab from './AppTabNavigator/MapTab'
 import ListTab from './AppTabNavigator/ListTab'
 import RageTab from './AppTabNavigator/RageTab'
@@ -36,6 +37,12 @@ export default MainScreen;
 
 const AppTabNavigator = createBottomTabNavigator(
     {
+        LoginTab: {
+            screen: LoginTab,
+            navigationOptions: {
+                header: null
+            }
+        },
         MapTab: {
             screen: MapTab,
             navigationOptions: {
@@ -84,7 +91,7 @@ const AppTabNavigator = createBottomTabNavigator(
                 backgroundColor: '#53c2fa',
                 // borderTopWidth: 0,
             },
-            initialRouteName: 'HomeTab',
+            initialRouteName: 'MapTab',
             activeTintColor: '#ffb900',
             inactiveTintColor: '#fff',
         }
