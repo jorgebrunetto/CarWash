@@ -1,6 +1,6 @@
 <p align="center">
   <a href="#">
-    <img src="https://getbootstrap.com/docs/4.1/assets/brand/bootstrap-solid.svg" alt="Bootstrap logo" width=72 height=72>
+    <img src="https://github.com/jorgebrunetto/CarWash/blob/master/site/img/logo.png" alt="Carwash Logo" width=72 height=72>
   </a>
 
   <h3 align="center">Carwash</h3>
