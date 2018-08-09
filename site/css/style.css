@@ -1,0 +1,41 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+@import url(https://cdn.materialdesignicons.com/2.5.94/css/materialdesignicons.min.css);
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+*,
+*:after,
+*:before {
+    box-sizing: border-box;
+    outline: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    background: #53c2fa;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(45deg, #754ae5, #53c2fa);
+    background: -moz-linear-gradient(45deg, #754ae5, #53c2fa);
+    background: -o-linear-gradient(45deg, #754ae5, #53c2fa);
+    background: linear-gradient(45deg, #754ae5, #53c2fa);
+    font-family: "Roboto", sans-serif;
+    height: 100%;
+}
+
+.container {
+	height: 100%;
+	width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@media(max-width: 480px) {
+}
