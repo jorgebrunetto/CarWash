@@ -38,10 +38,64 @@
 </head>
 
 <body>
-	
+	<main class="container">
+		<nav>
+			<ul>
+				<li>
+					<a href="#extrato" class="active">Extrato</a>
+				</li>
+				<li>
+					<a href="#usuario">Usuários</a>
+				</li>
+				<li>
+					<a href="#contato">Contato</a>
+				</li>
+				<li>
+					<a href="#sair">Sair</a>
+				</li>
+			</ul>
+		</nav>
+		<span class="toggler active" data-toggle="grid">
+			<span class="mdi mdi-view-module"></span>
+		</span>
+		<span class="toggler" data-toggle="list">
+			<span class="mdi mdi-view-list"></span>
+		</span>
+		<ul class="surveys grid">
+			<li class="survey-item">
+				<span class="survey-country list-only">
+					1KM
+				</span>
+				<span class="survey-name">
+					Claudio Rodrigues
+				</span>
+				<span class="survey-country grid-only">
+					1KM
+				</span>
+				<div class="pull-right">
+					<span class="survey-progress">
+						<span class="survey-progress-bg">
+							<span class="survey-progress-fg" style="width: 88%;"></span>
+						</span>
+						<span class="survey-progress-labels">
+							<span class="survey-progress-label">
+									88% <span>(9.7/10)</span>
+							</span>
+						</span>
+					</span>
+					<span class="survey-end-date ended">
+						19 Lavagens
+					</span>
+					<span class="survey-stage">
+						<span class="stage active"></span>
+					</span>
+				</div>
+			</li>
+		</ul>
+		</div>
 
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="js/main.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="js/main.js"></script>
 </body>
 
 </html>
