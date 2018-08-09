@@ -37,6 +37,7 @@ Several quick start options are available:
 - [Download the latest release.](https://github.com/twbs/bootstrap/archive/v4.1.3.zip)
 - Clone the repo: `git clone https://github.com/jorgebrunetto/app/CarWash.git`
 - Install with dependency [npm](https://www.npmjs.com/): `npm install`
+- Starting project: `npm start`
 
 ## Status
 
