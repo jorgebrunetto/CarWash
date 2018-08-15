@@ -72,13 +72,36 @@ nav ul a.active {
 .surveys {
     list-style: none;
     margin: 0;
+    display: flex;
     padding: 0;
+    flex-wrap: wrap;
+    max-height: calc(100% - 70px);
+}
+
+.surveys.list {
+    flex-direction: column;
+    overflow: auto;
+    padding-right: 10px;
+    flex-wrap: nowrap;
+}
+
+.block-list {
+    display: none;
+    flex-direction: column;
+    margin-top: 10px;
+    padding: 20px;
+    border-radius: 2px;
+    background: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 2px 1px rgba(170, 170, 170, 0.25);
+}
+
+.block-list:target {
+    display: flex
 }
 
 .survey-item {
-    display: block;
     margin-top: 10px;
-    padding: 20px;
+    padding: 10px;
     border-radius: 2px;
     background: white;
     box-shadow: 0 2px 1px rgba(170, 170, 170, 0.25);
@@ -188,12 +211,12 @@ nav ul a.active {
 
 .grid .survey-item {
     position: relative;
-    display: inline-block;
-    vertical-align: top;
     height: 130px;
     width: 250px;
     margin-bottom: 10px;
     margin-right: 10px;
+    flex: 1 15%;
+    max-width: 230px;
 }
 
 @media screen and (max-width: 600px) {
