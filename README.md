@@ -15,7 +15,7 @@
     ·
     <a href="#">Downloads</a>
     ·
-    <a href="tree/master/api#documentação">API</a>
+    <a href="https://github.com/jorgebrunetto/CarWash/tree/master/api#documentação">API</a>
     ·
     <a href="#">Bugs Report</a>
     ·
