@@ -14,12 +14,13 @@
     <a href="https://github.com/jorgebrunetto/CarWash/archive/master.zip">Downloads</a>
     ·
     <a href="https://github.com/jorgebrunetto/CarWash/tree/master/api#documentação">Documentação da API</a>
-    ·
-    [Quick Start](#quick-start)
   </p>
 </p>
 
 <br>
+
+## Menu
+- [Quick Start](#quick-start)
 
 ## Quick start
 
