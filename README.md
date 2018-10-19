@@ -6,29 +6,20 @@
   <h3 align="center">Carwash</h3>
 
   <p align="center">
-    Desenvolvimento do sistema carwash, para o trabalho de pós graduação.
-    <br>
-    <a href="#"><strong>Documentação da API »</strong></a>
+    Desenvolvimento do sistema Carwash, para o trabalho de pós graduação.
     <br>
     <br>
     <a href="#">Site</a>
     ·
-    <a href="#">Downloads</a>
+    <a href="https://github.com/jorgebrunetto/CarWash/archive/master.zip">Downloads</a>
     ·
-    <a href="https://github.com/jorgebrunetto/CarWash/tree/master/api#documentação">API</a>
+    <a href="https://github.com/jorgebrunetto/CarWash/tree/master/api#documentação">Documentação da API</a>
     ·
-    <a href="#">Bugs Report</a>
-    ·
-    <a href="#">Novidades</a>
+    [Quick Start](#quick-start)
   </p>
 </p>
 
 <br>
-
-## Table of contents
-
-- [Site](#quick-start)
-- [Download](#quick-start)
 
 ## Quick start
 
