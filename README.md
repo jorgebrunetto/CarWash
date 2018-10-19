@@ -15,7 +15,7 @@
     ·
     <a href="#">Downloads</a>
     ·
-    <a href="#">API</a>
+    <a href="/tree/master/api">API</a>
     ·
     <a href="#">Bugs Report</a>
     ·
