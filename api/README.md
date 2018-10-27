@@ -1,6 +1,8 @@
 # Documentação
 
-## Chamada do Metodo A
+## Metodo A
+
+**Chamada**
 
 ```
 api/
@@ -12,7 +14,7 @@ app/
   └── AppTabNavigator/
 ```
 
-## Response Metodo A
+**Response**
 
 ```
 APT{
