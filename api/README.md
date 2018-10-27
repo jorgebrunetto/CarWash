@@ -8,21 +8,20 @@
 - [Editar Cadastro](#editar-cadastro)
 - [Ajuda](#ajuda)
 - [Cadastrar Serviços](#cadastrar-serviços)
-- [Listar Serviços para cadastro](#metodo-a)
-- [Aceitar e Rejeitar Serviços](#metodo-a)
-- [Extrato de Lavagem](#metodo-a)
-- [Listagem de Todos os pedidos](#metodo-a)
-- [Listagem de pedidos por usuário](#metodo-a)
-- [Receber pagamento mensal/semanal](#metodo-a)
-- [Buscar lavadores mais próximos](#metodo-a)
-- [Listar serviços de um lavador](#metodo-a)
-- [Enviar solicitação de lavagem](#metodo-a)
-- [Realizar pagamento](#metodo-a)
-- [Avaliar lavador](#metodo-a)
-- [Listagem de usuários](#metodo-a)
-- [Aceitar pedido](#metodo-a)
-- [Rejeitar pedido](#metodo-a)
-- [Diagrama de fluxo ideal](#metodo-a)
+- [Listar Serviços para cadastro](#listar-serviços-disponíveis-para-cadastro)
+- [Aceitar e Rejeitar Serviços](#aceitar-ou-rejeitar-serviços)
+- [Extrato de Lavagem](#avaliar-cliente)
+- [Listagem de Todos os pedidos](#extrato-de-lavagens-com-filtro-de-data)
+- [Listagem de pedidos por usuário](#listagem-detalhe-de-todos-os-pedidos)
+- [Receber pagamento mensal/semanal](#listagem-de-pedidos-por-usuário)
+- [Buscar lavadores mais próximos](#receber-pagamento-mensalsemanal)
+- [Listar serviços de um lavador](#listar-serviços-de-um-lavador)
+- [Enviar solicitação de lavagem](#enviar-solicitação-de-lavagem)
+- [Realizar pagamento](#realizar-pagamento)
+- [Avaliar lavador](#avaliar-lavador)
+- [Listagem de usuários](#listagem-de-usuário)
+- [Aceitar pedido](#aceitar-pedido)
+- [Rejeitar pedido](#rejeitar-pedido)
 
 ## Login
 
@@ -733,6 +732,25 @@ user:admin, pass:CirioSete
 ```
 
 ## Avaliar lavador
+
+API: http://api.carwash.tk/Api/
+Método: Post
+Authentication: Basic
+user:admin, pass:CirioSete
+
+**Request JSON**
+
+```
+
+```
+
+**Response**
+
+```
+
+```
+
+## Listagem de Usuário
 
 API: http://api.carwash.tk/Api/
 Método: Post
