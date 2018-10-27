@@ -621,3 +621,192 @@ ou
    "Result": "Erro genérico."
 }
 ```
+
+## Listar Serviços de um lavador
+
+API: http://api.carwash.tk/Api/ApiUser/ListServicesByWasher
+Método: Post
+Authentication: Basic
+user:admin, pass:CirioSete
+
+**Request JSON**
+
+```
+{
+"Token":"oT2Bqams7mpiwyI7HN+B1Vxd6dp7apY8KxGCKVjoQ==",
+	"WasherId”: 1
+}
+```
+
+**Response**
+
+```
+{
+   "Status": true,
+   "Result": [
+      {
+         "UserId": 1,
+         "ServiceId": 1,
+         "Name": "Lavagem Externa",
+         "DefaultPrice": 10,
+         "SpecificPrice": 0
+      },
+      {
+         "UserId": 1,
+         "ServiceId": 2,
+         "Name": "Secagem Externa",
+         "DefaultPrice": 8,
+         "SpecificPrice": 0
+      }
+   ]
+}
+ou
+{
+   "Status": false,
+   "Result": "Erro genérico."
+}
+```
+
+## Enviar solicitação de lavagem
+
+API: http://api.carwash.tk/Api/ApiUser/CreateOrder
+Método: Post
+Authentication: Basic
+user:admin, pass:CirioSete
+
+**Request JSON**
+
+```
+{
+	"Token":"oT2Bqams7mpiwyI7HN+B1Vxd6dp7apY8KxGCKVjoQ==",
+	"UserId":"2",
+	"WasherId":"3",
+	"TotalPrice":25.00,
+	"ScheduledDateTime":"2018-09-12 17:00",
+	"ListItens":[
+		{
+			"ServiceId":3,
+			"Price":34.00
+		},
+		{
+			"ServiceId":4,
+			"Price":15.00
+		}
+   ]
+}
+```
+
+**Response**
+
+```
+{
+   "Status": true,
+   "Result": {
+      “OrderId”: 23167,
+      “Message”:”Pedido criado com sucesso.”
+   }
+}
+Ou
+{
+   "Status": false,
+   "Result": "Erro genérico."
+}
+```
+
+## Realizar pagamento
+
+API: http://api.carwash.tk/Api/
+Método: Post
+Authentication: Basic
+user:admin, pass:CirioSete
+
+**Request JSON**
+
+```
+
+```
+
+**Response**
+
+```
+
+```
+
+## Avaliar lavador
+
+API: http://api.carwash.tk/Api/
+Método: Post
+Authentication: Basic
+user:admin, pass:CirioSete
+
+**Request JSON**
+
+```
+
+```
+
+**Response**
+
+```
+
+```
+
+## Aceitar pedido
+
+API: http://api.carwash.tk/Api/ApiUser/AcceptOrder
+Método: Post
+Authentication: Basic
+user:admin, pass:CirioSete
+
+**Request JSON**
+
+```
+{
+	"Token":"oT2Bqams7mpiwyI7HN+B1Vxd6dp7apY8KxGCKVjoQ==",
+	"OrderId":"8"
+}
+```
+
+**Response**
+
+```
+{
+   "Status": true,
+   "Result": "Pedido aceito com sucesso."
+}
+Ou
+{
+   "Status": false,
+   "Result": "Erro genérico."
+}
+```
+
+## Rejeitar pedido
+
+API: http://api.carwash.tk/Api/ApiUser/RejectOrder
+Método: Post
+Authentication: Basic
+user:admin, pass:CirioSete
+
+**Request JSON**
+
+```
+{
+	"Token":"oT2Bqams7mpiwyI7HN+B1Vxd6dp7apY8KxGCKVjoQ==",
+	"OrderId":"8"
+}
+```
+
+**Response**
+
+```
+{
+   "Status": true,
+   "Result": "Pedido rejeitado com sucesso."
+}
+Ou
+{
+   "Status": false,
+   "Result": "Erro genérico."
+}
+```
