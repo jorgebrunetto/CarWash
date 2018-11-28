@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qtJ-C3-uOI">
+                                <rect key="frame" x="41" y="230" width="293" height="207"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-carwash" translatesAutoresizingMaskIntoConstraints="NO" id="qGf-qE-PJu">
+                                        <rect key="frame" x="82.5" y="0.0" width="128" height="128"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="128" id="S1y-3l-tx1"/>
+                                            <constraint firstAttribute="height" constant="128" id="mDr-tK-qbZ"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-carwash" translatesAutoresizingMaskIntoConstraints="NO" id="1bg-2X-0n0">
+                                        <rect key="frame" x="18.5" y="160" width="256" height="47"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="256" id="aTe-BV-2qM"/>
+                                            <constraint firstAttribute="height" constant="47" id="wHd-Yc-e9n"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="293" id="FGm-Rq-Ygz"/>
+                                    <constraint firstItem="1bg-2X-0n0" firstAttribute="centerX" secondItem="qtJ-C3-uOI" secondAttribute="centerX" id="UM6-xK-FO5"/>
+                                    <constraint firstAttribute="height" constant="207" id="VPY-gy-JvS"/>
+                                    <constraint firstItem="qGf-qE-PJu" firstAttribute="centerX" secondItem="qtJ-C3-uOI" secondAttribute="centerX" id="YfN-Jd-qZs"/>
+                                    <constraint firstItem="qGf-qE-PJu" firstAttribute="top" secondItem="qtJ-C3-uOI" secondAttribute="top" id="oTW-Wb-HJH"/>
+                                    <constraint firstAttribute="bottom" secondItem="1bg-2X-0n0" secondAttribute="bottom" id="tge-Tl-rLi"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="qtJ-C3-uOI" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Nfu-m1-wf7"/>
+                            <constraint firstItem="qtJ-C3-uOI" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="YKL-vY-uMS"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="52" y="374.66266866566718"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="icon-carwash" width="1024" height="1024"/>
+        <image name="logo-carwash" width="341" height="47"/>
+    </resources>
+</document>
