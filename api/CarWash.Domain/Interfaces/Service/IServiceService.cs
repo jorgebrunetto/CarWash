@@ -1,0 +1,16 @@
+﻿using BasicDDD.Domain.Entities;
+using BasicDDD.Domain.Entities.ValueObjects;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace BasicDDD.Domain.Interfaces.Service
+{
+    public interface IServiceService
+    {
+        List<Entities.Service> ListAllServices();
+        int AddServiceToWasher(ServicesXUser serviceXUser);
+    }
+}
