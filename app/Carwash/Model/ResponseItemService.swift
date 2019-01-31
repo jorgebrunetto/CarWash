@@ -11,28 +11,36 @@ import ObjectMapper
 /// Mappable Model ResponseItemService da API
 class ResponseItemService: Mappable {
 
-    var Id:Int
-    var Name: String?
+    // traz no metodo listarlistar todos os servicos
+    var Id:Int?
+    //var Active:Bool
+    
+    var UserId:Int!
+    var ServiceId:Int!
+    
+    var Name: String!
     var DefaultPrice:Int
-    var Active:Bool
-    
-    var UserId:Int?
     var SpecificPrice:Int?
-    
+
     required init?(map: Map) {
-        Id = try! map.value("Id")
+        Id = try? map.value("Id")
+        //Active = try! map.value("Active")
+        ServiceId = try? map.value("ServiceId")
+        
         Name = try? map.value("Name")
         DefaultPrice = try! map.value("DefaultPrice")
-        Active = try! map.value("Active")
+
         UserId = try? map.value("UserId")
         SpecificPrice = try? map.value("SpecificPrice")
     }
-    
+   
     func mapping(map: Map) {
         Id <- map["Id"]
+        //Active <- map["Active"]
+        ServiceId <- map["Id"]
         Name <- map["Name"]
         DefaultPrice <- map["DefaultPrice"]
-        Active <- map["Active"]
+
         UserId <- map["UserId"]
         SpecificPrice <- map["SpecificPrice"]
     }

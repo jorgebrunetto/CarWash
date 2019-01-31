@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import PopupDialog
 
 /*
  Controller Tab2 - Responsável pelo gerenciamento das solicitações feitas pelos usuários
@@ -31,7 +32,6 @@ class Tab2MySchedulesViewController: UIViewController, UITableViewDataSource, UI
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        tableView.delegate = self
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 60
         tableView.delegate = self
@@ -53,11 +53,11 @@ class Tab2MySchedulesViewController: UIViewController, UITableViewDataSource, UI
             self.listOrders = response.Result!
             self.tableView.reloadData()
             
-        }) { (messageError) -> (Void) in
+        }) { (errorMessage) -> (Void) in
             
             self.stopLoading()
             
-            let alert = UIAlertController(title: "", message: messageError, preferredStyle: UIAlertController.Style.alert)
+            let alert = UIAlertController(title: "", message: errorMessage, preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
@@ -76,17 +76,46 @@ class Tab2MySchedulesViewController: UIViewController, UITableViewDataSource, UI
         let imgView = cell.viewWithTag(1) as! UIImageView
         let labelStatus = cell.viewWithTag(2) as! UILabel
         let labelSchedule = cell.viewWithTag(3) as! UILabel
+        let button_accept = cell.viewWithTag(11) as! UIButton
+        let button_reject = cell.viewWithTag(10) as! UIButton
+        let button_evaluate = cell.viewWithTag(102) as! UIButton
+        
+        button_accept.titleLabel?.tag = indexPath.row
+        button_reject.titleLabel?.tag = indexPath.row
+        button_evaluate.titleLabel?.tag = indexPath.row
+        
+        button_accept.addTarget(self, action: #selector(acceptOrder(sender:)), for: UIControl.Event.touchUpInside)
+        button_reject.addTarget(self, action: #selector(rejectOrder(sender:)), for: UIControl.Event.touchUpInside)
+        button_evaluate.addTarget(self, action: #selector(evaluate(sender:)), for: UIControl.Event.touchUpInside)
         
         labelStatus.text = ""
         labelSchedule.text = ""
         let item = listOrders[indexPath.row]
         
+        // Esconder Aceitar/reijeitar
+        button_accept.isHidden = true
+        button_reject.isHidden = true
+        button_evaluate.isHidden = true
         if item.Status == 1{
             // iniciado
-            labelStatus.text = "Reserva enviada"
-            imgView.image = UIImage(named: "calendar-clock-blue")
-            if item.ScheduledDateTime != nil{
-                labelSchedule.text = item.ScheduledDateTime
+           
+            if UserSession.sharedInstance.resultLogin.RoleId == 1{
+                labelStatus.text = "Reserva enviada"
+                imgView.image = UIImage(named: "calendar-clock-blue")
+                if item.ScheduledDateTime != nil{
+                    labelSchedule.text = Utils.formatDate(inputDate: item.ScheduledDateTime!, inputFormat: "yyyy-MM-dd'T'HH:mm:ss", endFormat: "dd/MM/yyyy HH:mm:ss")
+                }
+            }
+            else{
+                // Mostrar aceitar Rejeitar
+                button_accept.isHidden = false
+                button_reject.isHidden = false
+                
+                labelStatus.text = "Reserva recebida"
+                imgView.image = UIImage(named: "calendar-clock-blue")
+                if item.ScheduledDateTime != nil{
+                    labelSchedule.text = Utils.formatDate(inputDate: item.ScheduledDateTime!, inputFormat: "yyyy-MM-dd'T'HH:mm:ss", endFormat: "dd/MM/yyyy HH:mm:ss")
+                }
             }
         }
         else if item.Status == 2{
@@ -94,7 +123,7 @@ class Tab2MySchedulesViewController: UIViewController, UITableViewDataSource, UI
             labelStatus.text = "Lavagem cancelada"
             imgView.image = UIImage(named: "close")
             if item.ScheduledDateTime != nil{
-                labelSchedule.text = item.ScheduledDateTime
+                labelSchedule.text = Utils.formatDate(inputDate: item.ScheduledDateTime!, inputFormat: "yyyy-MM-dd'T'HH:mm:ss", endFormat: "dd/MM/yyyy HH:mm:ss")
             }
         }
         else if item.Status == 3{
@@ -102,7 +131,7 @@ class Tab2MySchedulesViewController: UIViewController, UITableViewDataSource, UI
             labelStatus.text = "Sua reserva foi recusada"
             imgView.image = UIImage(named: "alert")
             if item.ScheduledDateTime != nil{
-                labelSchedule.text = item.ScheduledDateTime
+                labelSchedule.text = Utils.formatDate(inputDate: item.ScheduledDateTime!, inputFormat: "yyyy-MM-dd'T'HH:mm:ss", endFormat: "dd/MM/yyyy HH:mm:ss")
             }
         }
         else if item.Status == 4{
@@ -110,15 +139,17 @@ class Tab2MySchedulesViewController: UIViewController, UITableViewDataSource, UI
             labelStatus.text = "Reserva confirmada"
             imgView.image = UIImage(named: "calendar-check-green")
             if item.ScheduledDateTime != nil{
-                labelSchedule.text = item.ScheduledDateTime
+                labelSchedule.text = Utils.formatDate(inputDate: item.ScheduledDateTime!, inputFormat: "yyyy-MM-dd'T'HH:mm:ss", endFormat: "dd/MM/yyyy HH:mm:ss")
             }
+            
+            button_evaluate.isHidden = false
         }
         else if item.Status == 5{
             // finalizado
             labelStatus.text = "Lavagem concluída"
             imgView.image = UIImage(named: "")
             if item.ScheduledDateTime != nil{
-                labelSchedule.text = item.ScheduledDateTime
+                labelSchedule.text = Utils.formatDate(inputDate: item.ScheduledDateTime!, inputFormat: "yyyy-MM-dd'T'HH:mm:ss", endFormat: "dd/MM/yyyy HH:mm:ss")
             }
         }
         
@@ -129,8 +160,99 @@ class Tab2MySchedulesViewController: UIViewController, UITableViewDataSource, UI
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
+    @objc func acceptOrder(sender:UIButton){
+        showLoading()
+        let item = listOrders[(sender.titleLabel?.tag)!]
+        
+        let api = RestApi()
+        api.acceptOrder(token: UserSession.sharedInstance.resultLogin.Token, orderID: item.OrderId, onSuccessCallback: { (response) -> (Void) in
+            
+            self.stopLoading()
+            
+            self.fillData()
+            
+        }) { (errorMessage) -> (Void) in
+            self.stopLoading()
+            let alert = UIAlertController(title: "", message: errorMessage, preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    @objc func rejectOrder(sender:UIButton){
+        showLoading()
+        let item = listOrders[(sender.titleLabel?.tag)!]
+        
+        let api = RestApi()
+        api.rejectOrder(token: UserSession.sharedInstance.resultLogin.Token, orderID: item.OrderId, onSuccessCallback: { (response) -> (Void) in
+            
+            self.stopLoading()
+            
+            self.fillData()
+        }) { (errorMessage) -> (Void) in
+            self.stopLoading()
+            let alert = UIAlertController(title: "", message: errorMessage, preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+
+    @objc func evaluate(sender:UIButton){
+        let item = listOrders[(sender.titleLabel?.tag)!]
+        
+        // Create a custom view controller
+        let ratingVC = RatingViewController(nibName: "RatingViewController", bundle: nil)
+
+        
+        // Create the dialog
+        let popup = PopupDialog(viewController: ratingVC,
+                                buttonAlignment: .horizontal,
+                                transitionStyle: .bounceDown,
+                                tapGestureDismissal: true,
+                                panGestureDismissal: false)
+        
+        // Create first button
+        let buttonOne = CancelButton(title: "CANCELAR", height: 60) {
+            
+        }
+        
+        // Create second button
+        let buttonTwo = DefaultButton(title: "AVALIAR", height: 60) {
+            //ratingVC.cosmosStarRating.rating
+            self.showLoading()
+           
+            let api = RestApi()
+            let request = RequestEvaluate()
+            request.Score = String(round(ratingVC.cosmosStarRating.rating))
+            request.UserIdFrom = String(UserSession.sharedInstance.resultLogin.Id)
+            request.UserIdTo = String(item.UserId)
+            request.Token = UserSession.sharedInstance.resultLogin.Token
+            request.OrderedId = item.OrderId
+            
+            api.evaluateUser(req: request, onSuccessCallback: { (response) -> (Void) in
+                
+                self.stopLoading()
+                
+                let alert = UIAlertController(title: "Sucesso", message: response.Result, preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            }, onFailureCallback: { (errorMessage) -> (Void) in
+                
+                self.stopLoading()
+                
+                let alert = UIAlertController(title: "", message: errorMessage, preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            })
+        }
+        
+        // Add buttons to dialog
+        popup.addButtons([buttonOne, buttonTwo])
+        
+        // Present dialog
+        present(popup, animated: true, completion: nil)
+    }
     /*
     // MARK: - Navigation
 

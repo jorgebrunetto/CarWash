@@ -22,4 +22,6 @@ class Messages: NSObject {
     static let SELECT_ONE_DATE = "Selecione uma Data."
     static let SELECT_ONE_HOUR = "Selecione uma Hora."
     static let CREATE_ORDER_SUCCESS = "Pedido criado com sucesso."
+    static let NO_INTERNET_CONNECTION = "Sem conexão com a Internet."
+    static let CANNOT_ADD_MORE_SERVICES = "Não é possível incluir mais serviços."
 }

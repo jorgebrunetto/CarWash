@@ -18,7 +18,7 @@ class RequestCreateOrder: Mappable {
     var ScheduledDateTime:String?
     var ListItens:[RequestOrderItem]?
     
-    required init?(map: Map) {
+    required init?(map: Map){
         Token = try? map.value("Token")
         UserId = try! map.value("UserId")
         WasherId = try! map.value("WasherId")
@@ -26,7 +26,7 @@ class RequestCreateOrder: Mappable {
         ScheduledDateTime = try? map.value("ScheduledDateTime")
         ListItens = try? map.value("ListItens")
     }
-    init(){
+    init() {
         
     }
     

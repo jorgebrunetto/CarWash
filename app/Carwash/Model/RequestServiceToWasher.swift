@@ -15,7 +15,9 @@ class RequestServiceToWasher: Mappable {
     var ServiceId:Int!
     var SpecificPrice:Double!
  
-    
+    init(){
+        
+    }
     required init?(map: Map) {
         ServiceId = try! map.value("ServiceId")
         
@@ -32,7 +34,5 @@ class RequestServiceToWasher: Mappable {
         
         SpecificPrice <- map["SpecificPrice"]
     }
-    
-    init(){
-    }
+
 }

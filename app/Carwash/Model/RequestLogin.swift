@@ -19,10 +19,9 @@ class RequestLogin: Mappable {
         Email = try! map.value("Email")
         Password = try! map.value("Password")
     }
-    
-    init(){
+    init() {
+        
     }
-    
     
     // Mappable
     func mapping(map: Map) {

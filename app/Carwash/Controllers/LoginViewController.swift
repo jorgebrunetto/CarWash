@@ -29,6 +29,15 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
         
         editEmail.text = "admin@carwash.com"
         editPassword.text = "123456"
+        
+        //editEmail.text = "admin@carwash.com.br"
+        //editPassword.text = "123456"
+        
+        //editEmail.text = "tonyjj@gmail.com"
+        //editPassword.text = "123456"
+        
+        //editEmail.text = "joao.lavador@hotmail.com"
+        //editPassword.text = "123456c@"
         loadingView.isHidden = true
     }
 
@@ -61,30 +70,44 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
             request.Email = editEmail.text
             request.Password = editPassword.text
             
-            api.apiLogin(req: request, onSuccessCallback: { (resultSuccess) -> (Void) in
+            if !Connectivity.isConnectedToInternet() {
                 self.loadingView.isHidden = true
                 self.loadingView.stopAnimating()
                 self.buttonEnter.titleString = "ENTRAR"
-                
-                // salvar dados de retorno
-                UserSession.sharedInstance.resultLogin = resultSuccess.resultOk!
-                self.performSegue(withIdentifier: "segueTab", sender: nil)
-            }) { (resultFailure) -> (Void) in
-               
-                self.loadingView.isHidden = true
-                self.loadingView.stopAnimating()
-                self.buttonEnter.titleString = "ENTRAR"
-                
-                let alert = UIAlertController(title: "Erro", message: resultFailure, preferredStyle: UIAlertController.Style.alert)
+                let alert = UIAlertController(title: "Erro", message: Messages.NO_INTERNET_CONNECTION, preferredStyle: UIAlertController.Style.alert)
                 alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
+            }
+            else{
+                api.apiLogin(req: request, onSuccessCallback: { (resultSuccess) -> (Void) in
+                    self.loadingView.isHidden = true
+                    self.loadingView.stopAnimating()
+                    self.buttonEnter.titleString = "ENTRAR"
+                    
+                    // salvar dados de retorno
+                    UserSession.sharedInstance.resultLogin = resultSuccess.resultOk!
+                    self.performSegue(withIdentifier: "segueTab", sender: nil)
+                }) { (resultFailure) -> (Void) in
+                    
+                    self.loadingView.isHidden = true
+                    self.loadingView.stopAnimating()
+                    self.buttonEnter.titleString = "ENTRAR"
+                    
+                    let alert = UIAlertController(title: "Erro", message: resultFailure, preferredStyle: UIAlertController.Style.alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                }
             }
         }
     }
     @IBAction func forgotPassword(){
         performSegue(withIdentifier: "segueForgotPasswordViewController", sender: nil)
     }
+    @IBAction func registerScreen(){
+        performSegue(withIdentifier: "segueRegister", sender: nil)
+    }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
         return true
     }
     

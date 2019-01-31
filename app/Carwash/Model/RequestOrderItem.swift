@@ -19,12 +19,12 @@ class RequestOrderItem: Mappable {
         Price = try! map.value("Price")
     }
     
+    init() {
+        
+    }
+    
     func mapping(map: Map) {
         ServiceId <- map["ServiceId"]
         Price <- map["Price"]
     }
-    init(){
-        
-    }
-    
 }

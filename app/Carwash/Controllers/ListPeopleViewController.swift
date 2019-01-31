@@ -88,8 +88,10 @@ class ListPeopleViewController: UIViewController,UITableViewDelegate,UITableView
                 labelDistance.text = String(format: "%.2f", Double(distance)/1000.0) + " km"
             }
         }
-        labelPrize.text = "R$ " + String(format: "%.2f", item.MinPrice)
-        
+        labelPrize.text = ""
+        if item.MinPrice != nil{
+            labelPrize.text = "R$ " + String(format: "%.2f", item.MinPrice!)
+        }
         // setar imagem, e chamar metodo para puxar imagem com as iniciais do nome
         imgView.layer.cornerRadius = 0.5 * 40;
         imgView.clipsToBounds = true

@@ -54,6 +54,15 @@ class Utils: NSObject {
         return dateFormatterEnd.string(from: date)
     }
     
+    static func dateToString(inputDate:Date, endFormat:String) -> String{
+    
+        let formatter = DateFormatter()
+        // initially set the format based on your datepicker date / server String
+        formatter.dateFormat = endFormat
+    
+        
+        return formatter.string(from: inputDate) // string purpose I add here
+    }
     
     /// Método para escalar uma imagem mantendo seu ratio
     ///
@@ -92,5 +101,20 @@ class Utils: NSObject {
         let result = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         return result
+    }
+    
+    static func formatDate(intputDate:String, inputFormat:String, endFormat:String) -> String{
+       
+        let dateFormatterGet = DateFormatter()
+        dateFormatterGet.dateFormat = inputFormat
+        
+        let dateFormatterPrint = DateFormatter()
+        dateFormatterPrint.dateFormat = endFormat
+        
+        let date: NSDate? = dateFormatterGet.date(from: intputDate)! as NSDate
+        if date == nil{
+            return ""
+        }
+        return dateFormatterPrint.string(from: date! as Date)
     }
 }

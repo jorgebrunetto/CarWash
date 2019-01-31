@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6A116A4F220274A4007AD77C /* CosmosDistrib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A116A4E220274A4007AD77C /* CosmosDistrib.swift */; };
+		6A116A5222027598007AD77C /* RatingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A116A5122027598007AD77C /* RatingViewController.xib */; };
+		6A116A54220275B1007AD77C /* RatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A116A53220275B1007AD77C /* RatingViewController.swift */; };
 		6A3954B7213AB4330088A92B /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3954B6213AB4330088A92B /* MapViewController.swift */; };
 		6A3954BB213ABA060088A92B /* ListPeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3954BA213ABA060088A92B /* ListPeopleViewController.swift */; };
 		6A3EEE752146E05100A80E94 /* RestApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3EEE742146E05100A80E94 /* RestApi.swift */; };
@@ -31,7 +34,6 @@
 		6A6AC47B2182B4F500F29C4B /* AnnotationWasher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6AC47A2182B4F500F29C4B /* AnnotationWasher.swift */; };
 		6A6AC47D2182B6B500F29C4B /* WasherProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6AC47C2182B6B500F29C4B /* WasherProfileViewController.swift */; };
 		6A6AC47F2182C73F00F29C4B /* ScheduleServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6AC47E2182C73F00F29C4B /* ScheduleServiceViewController.swift */; };
-		6A6AC4812182D00500F29C4B /* EvaluateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6AC4802182D00500F29C4B /* EvaluateViewController.swift */; };
 		6A86B6762149B5A300E0C036 /* UserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A86B6752149B5A300E0C036 /* UserSession.swift */; };
 		6AC2AF362179165B0043987E /* RequestRegisterUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC2AF352179165B0043987E /* RequestRegisterUser.swift */; };
 		6AC2AF38217916E30043987E /* ResponseDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC2AF37217916E30043987E /* ResponseDefault.swift */; };
@@ -46,6 +48,8 @@
 		6AC2AF4A2179366F0043987E /* ResponseCreateOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC2AF492179366F0043987E /* ResponseCreateOrder.swift */; };
 		6AC2AF4C217936F10043987E /* ItemCreateOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC2AF4B217936F10043987E /* ItemCreateOrder.swift */; };
 		6AC2AF4E2179375D0043987E /* RequestOrderItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC2AF4D2179375D0043987E /* RequestOrderItem.swift */; };
+		6AE79EB022007E0F00C1CACB /* Connectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE79EAF22007E0F00C1CACB /* Connectivity.swift */; };
+		6AE79EB222009DE400C1CACB /* ManagerTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE79EB122009DE400C1CACB /* ManagerTabController.swift */; };
 		6AF68F8E21364E46003B233F /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF68F8D21364E46003B233F /* InitialViewController.swift */; };
 		6AF68F9021364E70003B233F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF68F8F21364E70003B233F /* LoginViewController.swift */; };
 		6AF68F9221364E7C003B233F /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF68F9121364E7C003B233F /* CreateAccountViewController.swift */; };
@@ -56,6 +60,9 @@
 /* Begin PBXFileReference section */
 		4FFFD81E42AAAD54DAEBD3D4 /* Pods-Carwash.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Carwash.debug.xcconfig"; path = "Target Support Files/Pods-Carwash/Pods-Carwash.debug.xcconfig"; sourceTree = "<group>"; };
 		5B2C7B7DEBE65FBE7C4C84F7 /* Pods-Carwash.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Carwash.release.xcconfig"; path = "Target Support Files/Pods-Carwash/Pods-Carwash.release.xcconfig"; sourceTree = "<group>"; };
+		6A116A4E220274A4007AD77C /* CosmosDistrib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmosDistrib.swift; sourceTree = "<group>"; };
+		6A116A5122027598007AD77C /* RatingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RatingViewController.xib; path = Carwash/RatingViewController.xib; sourceTree = SOURCE_ROOT; };
+		6A116A53220275B1007AD77C /* RatingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingViewController.swift; sourceTree = "<group>"; };
 		6A3954B6213AB4330088A92B /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		6A3954BA213ABA060088A92B /* ListPeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPeopleViewController.swift; sourceTree = "<group>"; };
 		6A3EEE742146E05100A80E94 /* RestApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestApi.swift; sourceTree = "<group>"; };
@@ -82,7 +89,6 @@
 		6A6AC47A2182B4F500F29C4B /* AnnotationWasher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationWasher.swift; sourceTree = "<group>"; };
 		6A6AC47C2182B6B500F29C4B /* WasherProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WasherProfileViewController.swift; sourceTree = "<group>"; };
 		6A6AC47E2182C73F00F29C4B /* ScheduleServiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleServiceViewController.swift; sourceTree = "<group>"; };
-		6A6AC4802182D00500F29C4B /* EvaluateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvaluateViewController.swift; sourceTree = "<group>"; };
 		6A86B6752149B5A300E0C036 /* UserSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSession.swift; sourceTree = "<group>"; };
 		6AC2AF352179165B0043987E /* RequestRegisterUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestRegisterUser.swift; sourceTree = "<group>"; };
 		6AC2AF37217916E30043987E /* ResponseDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseDefault.swift; sourceTree = "<group>"; };
@@ -97,6 +103,8 @@
 		6AC2AF492179366F0043987E /* ResponseCreateOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseCreateOrder.swift; sourceTree = "<group>"; };
 		6AC2AF4B217936F10043987E /* ItemCreateOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCreateOrder.swift; sourceTree = "<group>"; };
 		6AC2AF4D2179375D0043987E /* RequestOrderItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestOrderItem.swift; sourceTree = "<group>"; };
+		6AE79EAF22007E0F00C1CACB /* Connectivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connectivity.swift; sourceTree = "<group>"; };
+		6AE79EB122009DE400C1CACB /* ManagerTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerTabController.swift; sourceTree = "<group>"; };
 		6AF68F8D21364E46003B233F /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		6AF68F8F21364E70003B233F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		6AF68F9121364E7C003B233F /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
@@ -123,6 +131,24 @@
 				5B2C7B7DEBE65FBE7C4C84F7 /* Pods-Carwash.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		6A116A4D2202748F007AD77C /* ExternalLib */ = {
+			isa = PBXGroup;
+			children = (
+				6A116A4E220274A4007AD77C /* CosmosDistrib.swift */,
+			);
+			path = ExternalLib;
+			sourceTree = "<group>";
+		};
+		6A116A5022027579007AD77C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6A116A5122027598007AD77C /* RatingViewController.xib */,
+				6A55461F21357C2F008EB5C0 /* Main.storyboard */,
+				6A55462421357C31008EB5C0 /* LaunchScreen.storyboard */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		6A3EEE722146DF6200A80E94 /* Api */ = {
@@ -166,6 +192,7 @@
 				6A3EEE792146E18A00A80E94 /* Utils.swift */,
 				6A3EEE832146FED400A80E94 /* Messages.swift */,
 				6A86B6752149B5A300E0C036 /* UserSession.swift */,
+				6AE79EAF22007E0F00C1CACB /* Connectivity.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -191,15 +218,15 @@
 		6A55461A21357C2F008EB5C0 /* Carwash */ = {
 			isa = PBXGroup;
 			children = (
+				6A116A5022027579007AD77C /* View */,
+				6A116A4D2202748F007AD77C /* ExternalLib */,
 				6A3EEE762146E06B00A80E94 /* Utils */,
 				6A67319F21374BEE00F4DA65 /* fonts */,
 				6A3EEE732146DF7300A80E94 /* Model */,
 				6A3EEE722146DF6200A80E94 /* Api */,
 				6AF68F8C21364DAE003B233F /* Controllers */,
 				6A55461B21357C2F008EB5C0 /* AppDelegate.swift */,
-				6A55461F21357C2F008EB5C0 /* Main.storyboard */,
 				6A55462221357C31008EB5C0 /* Assets.xcassets */,
-				6A55462421357C31008EB5C0 /* LaunchScreen.storyboard */,
 				6A55462721357C31008EB5C0 /* Info.plist */,
 			);
 			path = Carwash;
@@ -219,6 +246,7 @@
 		6AF68F8C21364DAE003B233F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				6A116A53220275B1007AD77C /* RatingViewController.swift */,
 				6AF68F8D21364E46003B233F /* InitialViewController.swift */,
 				6AF68F8F21364E70003B233F /* LoginViewController.swift */,
 				6AF68F9121364E7C003B233F /* CreateAccountViewController.swift */,
@@ -230,7 +258,7 @@
 				6A3954BA213ABA060088A92B /* ListPeopleViewController.swift */,
 				6A6AC47C2182B6B500F29C4B /* WasherProfileViewController.swift */,
 				6A6AC47E2182C73F00F29C4B /* ScheduleServiceViewController.swift */,
-				6A6AC4802182D00500F29C4B /* EvaluateViewController.swift */,
+				6AE79EB122009DE400C1CACB /* ManagerTabController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -307,6 +335,7 @@
 				6A55462621357C31008EB5C0 /* LaunchScreen.storyboard in Resources */,
 				6A6731A521374C0200F4DA65 /* Roboto-Bold.ttf in Resources */,
 				6A55462321357C31008EB5C0 /* Assets.xcassets in Resources */,
+				6A116A5222027598007AD77C /* RatingViewController.xib in Resources */,
 				6A6731A321374C0200F4DA65 /* Roboto-Regular.ttf in Resources */,
 				6A55462121357C2F008EB5C0 /* Main.storyboard in Resources */,
 			);
@@ -348,9 +377,11 @@
 				"${PODS_ROOT}/Target Support Files/Pods-Carwash/Pods-Carwash-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/ActionSheetPicker-3.0/ActionSheetPicker_3_0.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/DynamicBlurView/DynamicBlurView.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/LGButton/LGButton.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/PopupDialog/PopupDialog.framework",
 				"${BUILT_PRODUCTS_DIR}/SkeletonView/SkeletonView.framework",
 				"${BUILT_PRODUCTS_DIR}/SkyFloatingLabelTextField/SkyFloatingLabelTextField.framework",
 			);
@@ -360,9 +391,11 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ActionSheetPicker_3_0.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DynamicBlurView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LGButton.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PopupDialog.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkeletonView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkyFloatingLabelTextField.framework",
 			);
@@ -379,7 +412,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				6A86B6762149B5A300E0C036 /* UserSession.swift in Sources */,
+				6A116A54220275B1007AD77C /* RatingViewController.swift in Sources */,
 				6A6AC47D2182B6B500F29C4B /* WasherProfileViewController.swift in Sources */,
+				6AE79EB022007E0F00C1CACB /* Connectivity.swift in Sources */,
 				6A3EEE882147124300A80E94 /* ResponseWashers.swift in Sources */,
 				6AF68F9221364E7C003B233F /* CreateAccountViewController.swift in Sources */,
 				6AC2AF4A2179366F0043987E /* ResponseCreateOrder.swift in Sources */,
@@ -397,9 +432,9 @@
 				6A3954BB213ABA060088A92B /* ListPeopleViewController.swift in Sources */,
 				6A6AC47B2182B4F500F29C4B /* AnnotationWasher.swift in Sources */,
 				6A3EEE86214710F300A80E94 /* ResponseListWashers.swift in Sources */,
-				6A6AC4812182D00500F29C4B /* EvaluateViewController.swift in Sources */,
 				6A3EEE842146FED400A80E94 /* Messages.swift in Sources */,
 				6A3954B7213AB4330088A92B /* MapViewController.swift in Sources */,
+				6AE79EB222009DE400C1CACB /* ManagerTabController.swift in Sources */,
 				6A3EEE7C2146E34400A80E94 /* RequestLogin.swift in Sources */,
 				6AC2AF362179165B0043987E /* RequestRegisterUser.swift in Sources */,
 				6AC2AF3C21791A990043987E /* ResponseListServices.swift in Sources */,
@@ -412,6 +447,7 @@
 				6A4158FD2136DE3C009A1E6D /* Tab1MapViewController.swift in Sources */,
 				6AC2AF48217936070043987E /* RequestCreateOrder.swift in Sources */,
 				6AF68F8E21364E46003B233F /* InitialViewController.swift in Sources */,
+				6A116A4F220274A4007AD77C /* CosmosDistrib.swift in Sources */,
 				6A3EEE7E2146E34E00A80E94 /* ResponseLogin.swift in Sources */,
 				6A55461C21357C2F008EB5C0 /* AppDelegate.swift in Sources */,
 				6AC2AF46217921450043987E /* ResponseItemOrderItem.swift in Sources */,

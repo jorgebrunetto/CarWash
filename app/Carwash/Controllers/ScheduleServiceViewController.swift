@@ -56,46 +56,54 @@ class ScheduleServiceViewController: UIViewController,UITableViewDelegate,UITabl
             self.present(alert, animated: true, completion: nil)
         }
         else{
-            // Capturar data e hora selecionada formatar (2018-09-12 17:00) e incluir no request
-            let dateHour = selectedDate + " " + selectedHour
-            let formatter = DateFormatter()
-            // initially set the format based on your datepicker date / server String
-            formatter.dateFormat = "dd/MM/yyyy HH:mm"
-            // convert your string to date
-            let date = formatter.date(from: dateHour)
-            formatter.dateFormat = "yyyy-MM-dd HH:mm"
-            let scheduleDate = formatter.string(from: date!)
-            
-            request.ScheduledDateTime = scheduleDate
-            
-            // Preencher itens de serviço selecionado(s)
-            var count = 0
-            for i:Int in mapSelectedItems{
-                if i == 1{
-                    let oi = RequestOrderItem()
-                    oi.ServiceId = availableServices![count].Id
-                    oi.Price = Double(availableServices![count].DefaultPrice)
-                    request.ListItens?.append(oi)
-                }
-                count = count + 1
+            if !Connectivity.isConnectedToInternet(){
+                let alert = UIAlertController(title: "Erro", message: Messages.NO_INTERNET_CONNECTION, preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
             }
-            // Preencher preco total
-            request.TotalPrice = getTotal()
-            
-            let api = RestApi()
-            api.createOrder(req: request, onSuccessCallback: { (successMessage) -> (Void) in
-                let alert = UIAlertController(title: "Sucesso", message: Messages.CREATE_ORDER_SUCCESS, preferredStyle: UIAlertController.Style.alert)
-                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
-                self.present(alert, animated: true, completion: nil)
+            else{
+                // Capturar data e hora selecionada formatar (2018-09-12 17:00) e incluir no request
+                let dateHour = selectedDate + " " + selectedHour
+                let formatter = DateFormatter()
+                // initially set the format based on your datepicker date / server String
+                formatter.dateFormat = "dd/MM/yyyy HH:mm"
+                // convert your string to date
+                let date = formatter.date(from: dateHour)
+                formatter.dateFormat = "yyyy-MM-dd HH:mm"
+                let scheduleDate = formatter.string(from: date!)
                 
-            }) { (errorMessage) -> (Void) in
-                let alert = UIAlertController(title: "Erro", message: errorMessage, preferredStyle: UIAlertController.Style.alert)
-                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
-                self.present(alert, animated: true, completion: nil)
+                request.ScheduledDateTime = scheduleDate
+                request.ListItens = [RequestOrderItem]()
+                // Preencher itens de serviço selecionado(s)
+                var count = 0
+                for i:Int in mapSelectedItems{
+                    if i == 1{
+                        let oi = RequestOrderItem()
+                        oi.ServiceId = availableServices![count].ServiceId
+                        oi.Price = Double(availableServices![count].DefaultPrice)
+                        request.ListItens?.append(oi)
+                    }
+                    count = count + 1
+                }
+                // Preencher preco total
+                request.TotalPrice = getTotal()
+                
+                let api = RestApi()
+                api.createOrder(req: request, onSuccessCallback: { (successMessage) -> (Void) in
+                    let alert = UIAlertController(title: "Sucesso", message: Messages.CREATE_ORDER_SUCCESS, preferredStyle: UIAlertController.Style.alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                    
+                }) { (errorMessage) -> (Void) in
+                    let alert = UIAlertController(title: "Erro", message: errorMessage, preferredStyle: UIAlertController.Style.alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                }
             }
         }
         
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -133,7 +141,8 @@ class ScheduleServiceViewController: UIViewController,UITableViewDelegate,UITabl
         return "Dados do cartão de crédito"
     }
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 5
+        //return 5 - cartao de credito
+        return 4
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0{

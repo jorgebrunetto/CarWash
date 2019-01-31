@@ -12,7 +12,7 @@ import ObjectMapper
 class RequestEvaluate: Mappable {
 
     var Token: String?
-    var OrderedId:Int
+    var OrderedId:Int!
     var UserIdFrom: String?
     var UserIdTo: String?
     var Score: String?
@@ -27,10 +27,13 @@ class RequestEvaluate: Mappable {
         Score = try? map.value("Score")
     }
     
+    init(){
+        
+    }
+    
     func mapping(map: Map) {
         
         OrderedId <- map["OrderedId"]
-        
         Token <- map["Token"]
         UserIdFrom <- map["UserIdFrom"]
         UserIdTo <- map["UserIdTo"]

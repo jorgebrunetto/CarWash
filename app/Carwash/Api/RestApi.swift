@@ -97,7 +97,30 @@ class RestApi: NSObject {
                         onFailureCallback(Messages.CANT_COMPLETE_REQUEST)
                     }
                     else{
-                        onSuccessCallback(result!)
+                        if result?.Status == true{
+                            if result?.Result != nil{
+                                if result?.Result == ""{
+                                    result?.Result = "Dados registrado com sucesso!"
+                                }
+                            }
+                            else{
+                                 result?.Result = "Dados registrado com sucesso!"
+                            }
+                            onSuccessCallback(result!)
+                        }
+                        else{
+                            if result?.Result != nil{
+                                if result?.Result != nil{
+                                    if result?.Result == ""{
+                                        result?.Result = Messages.CANT_COMPLETE_REQUEST
+                                    }
+                                }
+                                else{
+                                    result?.Result = Messages.CANT_COMPLETE_REQUEST
+                                }
+                                onFailureCallback((result?.Result)!)
+                            }
+                        }
                     }
                 }
                 else{
@@ -273,7 +296,7 @@ class RestApi: NSObject {
      O cliente poderá visualizar no mapa os lavadores e lava-rápidos mais próximos de sua residência ou de uma região específica.
      */
     func apiFindWashersArround(token:String, radius:Int, latitude:String, longitude:String, onSuccessCallback: @escaping (ResponseListWashers) -> (Void), onFailureCallback: @escaping (String) -> (Void)) {
-        let params = ["Token":token, "MaxRadius":radius, "Latitude":latitude, "Longitude":longitude] as [String : Any]
+        let params = ["Token":token, "MaxRadius":99999, "Latitude":latitude, "Longitude":longitude] as [String : Any]
         
         let credentialData = "\(user):\(pass)".data(using: String.Encoding.utf8)!
         let base64Credentials = credentialData.base64EncodedString(options: [])
@@ -288,7 +311,7 @@ class RestApi: NSObject {
                 
                 if let data = response.data, let jsonUtf8Text = String(data: data, encoding: .utf8) {
                     // original server data as UTF8 string
-                    //debugPrint(jsonUtf8Text)
+                    debugPrint(jsonUtf8Text)
                     let result =  (ResponseListWashers)(JSONString: jsonUtf8Text)
                     
                     if(result == nil){
@@ -396,7 +419,16 @@ class RestApi: NSObject {
                             onSuccessCallback(Messages.CREATE_ORDER_SUCCESS)
                         }
                         else{
-                            onFailureCallback(Messages.CANT_COMPLETE_REQUEST)
+                            let result2 =  (ResponseDefault)(JSONString: jsonUtf8Text)
+                            if result2 == nil{
+                                onFailureCallback(Messages.CANT_COMPLETE_REQUEST)
+                            }
+                            else if result2?.Result == nil{
+                                onFailureCallback(Messages.CANT_COMPLETE_REQUEST)
+                            }
+                            else{
+                                onFailureCallback(result2?.Result ?? Messages.CANT_COMPLETE_REQUEST)
+                            }
                         }
                     }
                 }

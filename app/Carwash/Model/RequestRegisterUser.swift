@@ -45,8 +45,9 @@ class RequestRegisterUser: Mappable {
         State = try? map.value("State")
         PhoneNumber = try? map.value("PhoneNumber")
     }
-    init(){
     
+    init() {
+        
     }
     
     func mapping(map: Map) {
@@ -68,7 +69,7 @@ class RequestRegisterUser: Mappable {
         City <- map["City"]
         State <- map["State"]
         PhoneNumber <- map["PhoneNumber"]
-        
+ 
     }
     
 }

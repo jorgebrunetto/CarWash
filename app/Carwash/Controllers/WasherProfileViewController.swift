@@ -78,7 +78,20 @@ class WasherProfileViewController: UIViewController,UITableViewDelegate,UITableV
         
         showLoading()
         let api = RestApi()
-        api.listAllServices(token: UserSession.sharedInstance.resultLogin.Token, onSuccessCallback: { (response) -> (Void) in
+        api.listServicesByWasher(token: UserSession.sharedInstance.resultLogin.Token, washerID: washerItem.Id, onSuccessCallback: { (response) -> (Void) in
+            self.stopLoading()
+            
+            self.availableServices = response.Result
+            self.tableView.reloadData()
+        }) { (messageError) -> (Void) in
+            self.stopLoading()
+            
+            let alert = UIAlertController(title: "", message: messageError, preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+        
+        /*api.listAllServices(token: UserSession.sharedInstance.resultLogin.Token, onSuccessCallback: { (response) -> (Void) in
             
             self.stopLoading()
             
@@ -90,7 +103,7 @@ class WasherProfileViewController: UIViewController,UITableViewDelegate,UITableV
             let alert = UIAlertController(title: "", message: messageError, preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
-        }
+        }*/
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {

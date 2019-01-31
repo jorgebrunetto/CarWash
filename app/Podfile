@@ -17,6 +17,7 @@ target 'Carwash' do
   pod 'Kingfisher', '~> 4.0'
   pod "SkeletonView"
   pod 'ActionSheetPicker-3.0'
+  pod 'PopupDialog', '~> 0.9'
 
 end
 

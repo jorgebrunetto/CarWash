@@ -23,7 +23,6 @@ class ResponseDefault: Mappable {
     func mapping(map: Map) {
         
         Status <- map["Status"]
-        
         Result <- map["Result"]
     }
 }

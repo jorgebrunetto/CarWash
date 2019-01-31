@@ -12,5 +12,4 @@ import MapKit
 class AnnotationWasher: MKPointAnnotation {
 
     var itemWasher: ResponseWashers?
-    
 }

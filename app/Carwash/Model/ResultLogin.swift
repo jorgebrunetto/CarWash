@@ -77,5 +77,6 @@ class ResultLogin: Mappable {
         Longitude <- map["Longitude"]
         Active <- map["Active"]
         Token <- map["Token"]
+ 
     }
 }
