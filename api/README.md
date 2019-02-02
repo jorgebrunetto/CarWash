@@ -587,8 +587,9 @@ user:admin, pass:CirioSete
          "Latitude": "-22,5147493",
          "Longitude": "-46,4917236",
          "Active": true,
+		 "OrderAmount": 1,
          "ScoreAverage": null,
-   "MinPrice": 15.00
+		 "MinPrice": 15.00
       },
       {
          "Id": 3,
@@ -609,8 +610,9 @@ user:admin, pass:CirioSete
          "Latitude": "-19,5147493",
          "Longitude": "-43,4917236",
          "Active": true,
+		 "OrderAmount": 1,
          "ScoreAverage": 3.5,
-   "MinPrice": 25.00
+		 "MinPrice": 25.00
       }
    ]
 }
