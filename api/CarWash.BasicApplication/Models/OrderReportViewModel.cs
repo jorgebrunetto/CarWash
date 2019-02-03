@@ -16,6 +16,11 @@ namespace BasicDDD.BasicApplication.Models
         public string UserName { get; set; }
         public int WasherId { get; set; }
         public string WasherName { get; set; }
+
+        public int? Evaluation { get; set; }
+        public decimal? UserScoreAverage { get; set; }
+        public decimal? WasherScoreAverage { get; set; }
+
         public List<OrderItemReportViewModel> Itens { get; set; }
     }
 }

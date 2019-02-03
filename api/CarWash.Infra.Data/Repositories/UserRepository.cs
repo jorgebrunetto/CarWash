@@ -177,29 +177,37 @@ namespace BasicDDD.Infra.Data.Repositories
         {
             using (MySqlConnection con = new MySqlConnection(conString))
             {
-                var sql = @"select Id, 
-                                    RoleId, 
-                                    Name,
-                                    Email,
-                                    Password,
-                                    Document,
-                                    Inserted,
-                                    BirthDate,
-                                    Cep,
-                                    Address,
-                                    AddressNumber,
-                                    Complement,
-                                    District,
-                                    City,
-                                    State,
-                                    PhoneNumber,
-                                    Latitude,
-                                    Longitude,
-                                    Active
-                                    from User
+                var sql = @"select U.Id, 
+                                    U.RoleId, 
+                                    U.Name,
+                                    U.Email,
+                                    U.Password,
+                                    U.Document,
+                                    U.Inserted,
+                                    U.BirthDate,
+                                    U.Cep,
+                                    U.Address,
+                                    U.AddressNumber,
+                                    U.Complement,
+                                    U.District,
+                                    U.City,
+                                    U.State,
+                                    U.PhoneNumber,
+                                    U.Latitude,
+                                    U.Longitude,
+                                    U.Active,
+                                    (Select Count(*) from Ordered Where Status >= 4 and (UserId = U.Id or WasherId = U.Id)) as OrderAmount,
+                                    (Select Count(*) from Evaluation Where UserIdTo = U.Id) as EvaluationAmount,
+                                    (Select Sum(Evaluation.Score) from Evaluation Where UserIdTo = U.Id) as ScoreSum
+                                    from User U
                                     where Email = '" + email + "' and Password = '" + password + "'";
 
-                return con.Query<User>(sql).ToList().FirstOrDefault();
+                var user = con.Query<User>(sql).ToList().FirstOrDefault();
+
+                if(user.EvaluationAmount > 0)
+                    user.ScoreAverage = Math.Round(((decimal)user.ScoreSum / (decimal)user.EvaluationAmount), 2);
+
+                return user;
             }
         }
 

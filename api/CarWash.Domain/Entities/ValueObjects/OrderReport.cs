@@ -17,6 +17,16 @@ namespace BasicDDD.Domain.Entities.ValueObjects
         public string UserName { get; set; }
         public int WasherId { get; set; }
         public string WasherName { get; set; }
+
+        public int? Evaluation { get; set; }
+        public int UserEvaluationAmount { get; set; }
+        public int UserScoreSum { get; set; }
+        public int WasherEvaluationAmount { get; set; }
+        public int WasherScoreSum { get; set; }
+
+        public decimal? UserScoreAverage { get; set; }
+        public decimal? WasherScoreAverage { get; set; }
+
         public List<OrderItemReport> Itens { get; set; }
     }
 }

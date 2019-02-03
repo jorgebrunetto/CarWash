@@ -27,6 +27,10 @@ namespace BasicDDD.Domain.Entities
         public string Latitude { get; set; }
         public string Longitude { get; set; }
         public bool Active { get; set; }
+        public int OrderAmount { get; set; }
+        public int EvaluationAmount { get; set; }
+        public int ScoreSum { get; set; }
+        public decimal? ScoreAverage { get; set; }
         public string Token { get; set; }
     }
 }
