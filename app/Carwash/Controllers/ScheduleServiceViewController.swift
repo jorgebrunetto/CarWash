@@ -91,8 +91,11 @@ class ScheduleServiceViewController: UIViewController,UITableViewDelegate,UITabl
                 let api = RestApi()
                 api.createOrder(req: request, onSuccessCallback: { (successMessage) -> (Void) in
                     let alert = UIAlertController(title: "Sucesso", message: Messages.CREATE_ORDER_SUCCESS, preferredStyle: UIAlertController.Style.alert)
-                    alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+                    alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: {(alert: UIAlertAction!) in
+                        self.navigationController?.popToRootViewController(animated: true)
+                    }))
                     self.present(alert, animated: true, completion: nil)
+                    
                     
                 }) { (errorMessage) -> (Void) in
                     let alert = UIAlertController(title: "Erro", message: errorMessage, preferredStyle: UIAlertController.Style.alert)
@@ -181,7 +184,12 @@ class ScheduleServiceViewController: UIViewController,UITableViewDelegate,UITabl
                 labelDescription.text = item.Name
             }
             
-            labelPrize.text = String(format: "R$ %.2f", Double(item.DefaultPrice)).replacingOccurrences(of: ".", with: ",")
+            if item.SpecificPrice != nil{
+                labelPrize.text = String(format: "R$ %.2f", Double(item.SpecificPrice!)).replacingOccurrences(of: ".", with: ",")
+            }
+            else{
+                labelPrize.text = String(format: "R$ %.2f", Double(item.DefaultPrice)).replacingOccurrences(of: ".", with: ",")
+            }
             
             return cell
         }
@@ -289,7 +297,12 @@ class ScheduleServiceViewController: UIViewController,UITableViewDelegate,UITabl
         var total:Int = 0
         for i:Int in mapSelectedItems{
             if i == 1{
-                total = total + availableServices![count].DefaultPrice
+                if availableServices![count].SpecificPrice != nil{
+                    total = total + availableServices![count].SpecificPrice!
+                }
+                else{
+                    total = total + availableServices![count].DefaultPrice
+                }
             }
             count = count + 1
         }

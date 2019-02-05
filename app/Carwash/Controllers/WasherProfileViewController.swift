@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 /*
     Controller WasherProfile - Responsável pelo gerenciamento do perfil do lavador selecionado
@@ -65,10 +66,21 @@ class WasherProfileViewController: UIViewController,UITableViewDelegate,UITableV
         availableServices = [ResponseItemService]()
         imgView.layer.cornerRadius = 0.5 * 90;
         
-        labelScore.text = "0"
+        let name = washerItem.Name?.replacingOccurrences(of: " ", with: "+")
+        let url = URL(string: "https://ui-avatars.com/api/?rounded=true&font-size=0.33&name=\(name ?? "")")
+        
+        imgView.kf.setImage(with: url)
+
+        
+        labelScore.text = "5"
         labelTotalWashs.text = "0"
-        if (washerItem.ScoreAverage != nil){
-            labelTotalWashs.text = washerItem.ScoreAverage
+        
+        if washerItem.ScoreAverage != nil{
+            labelScore.text = String(Int(washerItem.ScoreAverage!))
+        }
+        
+        if washerItem.OrderAmount != nil{
+            labelTotalWashs.text = String(washerItem.OrderAmount!)
         }
         
         tableView.backgroundColor = UIColor.white
@@ -134,8 +146,12 @@ class WasherProfileViewController: UIViewController,UITableViewDelegate,UITableV
             labelDescription.text = item.Name
         }
         
-        labelPrize.text = String(format: "R$ %.2f", Double(item.DefaultPrice)).replacingOccurrences(of: ".", with: ",")
-        
+        if item.SpecificPrice != nil{
+            labelPrize.text = String(format: "R$ %.2f", Double(item.SpecificPrice!)).replacingOccurrences(of: ".", with: ",")
+        }
+        else{
+            labelPrize.text = String(format: "R$ %.2f", Double(item.DefaultPrice)).replacingOccurrences(of: ".", with: ",")
+        }
         return cellService
     }
 

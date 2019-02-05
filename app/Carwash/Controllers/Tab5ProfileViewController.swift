@@ -7,6 +7,8 @@
 
 import UIKit
 import ActionSheetPicker_3_0
+import Kingfisher
+import PopupDialog
 
 /*
  Controller Tab5 - Responsável pelo gerenciamento do perfil do usuário conectado
@@ -46,14 +48,30 @@ class Tab5ProfileViewController: UIViewController,UITableViewDelegate,UITableVie
         tableView.dataSource = self
         
         imgView.layer.cornerRadius = 0.5 * 90;
+        loadData()
+    }
+
+    @IBAction func loadData(){
         labelTotalWashes.text = "0"
-        labelTotalEvaluations.text = "0"
+        labelTotalEvaluations.text = "5"
+        if UserSession.sharedInstance.resultLogin.OrderAmount != nil{
+            labelTotalWashes.text = String(UserSession.sharedInstance.resultLogin.OrderAmount!)
+        }
+        if UserSession.sharedInstance.resultLogin.ScoreAverage != nil{
+            labelTotalEvaluations.text = String(Int(UserSession.sharedInstance.resultLogin.ScoreAverage!))
+        }
+        let name = UserSession.sharedInstance.resultLogin.Name?.replacingOccurrences(of: " ", with: "+")
+        let url = URL(string: "https://ui-avatars.com/api/?rounded=true&font-size=0.33&name=\(name ?? "")")
+
+        imgView.kf.setImage(with: url)
         
+        showLoading()
         if UserSession.sharedInstance.resultLogin.RoleId == 1{
             // Cliente
             NUMBER_SECTIONS = 2
             NUMBER_ROWS = 1
             tableView.reloadData()
+            stopLoading()
         }
         else{
             // Lavador/lava-rapido
@@ -66,7 +84,7 @@ class Tab5ProfileViewController: UIViewController,UITableViewDelegate,UITableVie
                 api.listServicesByWasher(token: UserSession.sharedInstance.resultLogin.Token, washerID:
                     
                     UserSession.sharedInstance.resultLogin.Id, onSuccessCallback: { (myResponse) -> (Void) in
-                    
+                        
                         self.NUMBER_SECTIONS = 4
                         self.NUMBER_ROWS = 1
                         if myResponse.Result == nil{
@@ -77,20 +95,22 @@ class Tab5ProfileViewController: UIViewController,UITableViewDelegate,UITableVie
                         }
                         self.NUMBER_SERVICES = self.myServices.count
                         self.tableView.reloadData()
+                        self.stopLoading()
                 }, onFailureCallback: { (errorMessage) -> (Void) in
-
+                    self.stopLoading()
                     let alert = UIAlertController(title: "Erro", message: errorMessage, preferredStyle: UIAlertController.Style.alert)
                     alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
                     self.present(alert, animated: true, completion: nil)
                 })
             }) { (errorMessage) -> (Void) in
+                
+                self.stopLoading()
                 let alert = UIAlertController(title: "Erro", message: errorMessage, preferredStyle: UIAlertController.Style.alert)
                 alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
             }
         }
     }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -185,6 +205,51 @@ class Tab5ProfileViewController: UIViewController,UITableViewDelegate,UITableVie
         let item = self.myServices[index!]
         
         // open popup com caixa texto numerica
+        
+        // Create a custom view controller
+        let addSpecificVC = AddSpecificPrizeViewController(nibName: "AddSpecificPrizeViewController", bundle: nil)
+        
+        
+        // Create the dialog
+        let popup = PopupDialog(viewController: addSpecificVC,
+                                buttonAlignment: .horizontal,
+                                transitionStyle: .bounceDown,
+                                tapGestureDismissal: true,
+                                panGestureDismissal: false)
+        
+        // Create first button
+        let buttonOne = CancelButton(title: "CANCELAR", height: 60) {
+            
+        }
+        
+        // Create second button
+        let buttonTwo = DefaultButton(title: "ADICIONAR", height: 60) {
+      
+            self.showLoading()
+            
+            let api = RestApi()
+            let request = RequestServiceToWasher()
+            request.Token = UserSession.sharedInstance.resultLogin.Token
+            request.ServiceId = item.ServiceId
+            request.SpecificPrice = Double(addSpecificVC.editSpecificPrize.text!)
+            api.addServiceToWasher(req: request, onSuccessCallback: { (response) -> (Void) in
+                // se ok, update list
+                self.stopLoading()
+                item.SpecificPrice = Int(addSpecificVC.editSpecificPrize.text!)
+                self.tableView.reloadData()
+            }, onFailureCallback: { (messageError) -> (Void) in
+                self.stopLoading()
+                let alert = UIAlertController(title: "Erro", message: messageError, preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            })
+        }
+        
+        // Add buttons to dialog
+        popup.addButtons([buttonOne, buttonTwo])
+        
+        // Present dialog
+        present(popup, animated: true, completion: nil)
     }
     @objc func newService(){
         // pegar os itens service disponiveis e mostrar apenas os que ainda nao foram vinculados
@@ -229,16 +294,18 @@ class Tab5ProfileViewController: UIViewController,UITableViewDelegate,UITableVie
                         let request = RequestServiceToWasher()
                         request.Token = UserSession.sharedInstance.resultLogin.Token
                         request.ServiceId = temp[value].ServiceId
-                        request.SpecificPrice = 0
+                        request.SpecificPrice = 5
                         api.addServiceToWasher(req: request, onSuccessCallback: { (response) -> (Void) in
-                            
+                            // se ok, add na lista
+                            self.myServices.append(temp[value])
+                            self.NUMBER_SERVICES = self.myServices.count
+                            self.tableView.reloadData()
                         }, onFailureCallback: { (messageError) -> (Void) in
-                            
+                            let alert = UIAlertController(title: "Erro", message: messageError, preferredStyle: UIAlertController.Style.alert)
+                            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+                            self.present(alert, animated: true, completion: nil)
                         })
-                        // se ok, add na lista
-                        self.myServices.append(temp[value])
-                        self.NUMBER_SERVICES = self.myServices.count
-                        self.tableView.reloadData()
+                    
                         
                         //print("value = \(value)")
                         //print("index = \(index)")

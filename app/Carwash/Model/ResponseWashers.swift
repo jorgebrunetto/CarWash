@@ -30,8 +30,9 @@ class ResponseWashers: Mappable {
     var Longitude:String?
     var Active:Bool
     var Token:String?
-    var ScoreAverage:String?
+    var ScoreAverage:Double?
     var MinPrice:Double?
+    var OrderAmount:Int?
     
     required init?(map: Map) {
         
@@ -58,6 +59,7 @@ class ResponseWashers: Mappable {
         
         ScoreAverage = try? map.value("ScoreAverage")
         MinPrice = try? map.value("MinPrice")
+        OrderAmount = try? map.value("OrderAmount")
     }
     
     func mapping(map: Map) {
@@ -85,5 +87,6 @@ class ResponseWashers: Mappable {
         
         ScoreAverage <- map["ScoreAverage"]
         MinPrice <- map["MinPrice"]
+        OrderAmount <- map["OrderAmount"]
     }
 }

@@ -35,6 +35,7 @@
 		6A6AC47D2182B6B500F29C4B /* WasherProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6AC47C2182B6B500F29C4B /* WasherProfileViewController.swift */; };
 		6A6AC47F2182C73F00F29C4B /* ScheduleServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6AC47E2182C73F00F29C4B /* ScheduleServiceViewController.swift */; };
 		6A86B6762149B5A300E0C036 /* UserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A86B6752149B5A300E0C036 /* UserSession.swift */; };
+		6A9367192205D8080030EBE6 /* ResponseViaCep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9367182205D8080030EBE6 /* ResponseViaCep.swift */; };
 		6AC2AF362179165B0043987E /* RequestRegisterUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC2AF352179165B0043987E /* RequestRegisterUser.swift */; };
 		6AC2AF38217916E30043987E /* ResponseDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC2AF37217916E30043987E /* ResponseDefault.swift */; };
 		6AC2AF3A217918DA0043987E /* RequestServiceToWasher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC2AF39217918DA0043987E /* RequestServiceToWasher.swift */; };
@@ -48,6 +49,8 @@
 		6AC2AF4A2179366F0043987E /* ResponseCreateOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC2AF492179366F0043987E /* ResponseCreateOrder.swift */; };
 		6AC2AF4C217936F10043987E /* ItemCreateOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC2AF4B217936F10043987E /* ItemCreateOrder.swift */; };
 		6AC2AF4E2179375D0043987E /* RequestOrderItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC2AF4D2179375D0043987E /* RequestOrderItem.swift */; };
+		6ADED0BC22086881000942CE /* ServicePrizeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6ADED0BB22086881000942CE /* ServicePrizeViewController.xib */; };
+		6ADED0BE22086981000942CE /* AddSpecificPrizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ADED0BD22086981000942CE /* AddSpecificPrizeViewController.swift */; };
 		6AE79EB022007E0F00C1CACB /* Connectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE79EAF22007E0F00C1CACB /* Connectivity.swift */; };
 		6AE79EB222009DE400C1CACB /* ManagerTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE79EB122009DE400C1CACB /* ManagerTabController.swift */; };
 		6AF68F8E21364E46003B233F /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF68F8D21364E46003B233F /* InitialViewController.swift */; };
@@ -90,6 +93,7 @@
 		6A6AC47C2182B6B500F29C4B /* WasherProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WasherProfileViewController.swift; sourceTree = "<group>"; };
 		6A6AC47E2182C73F00F29C4B /* ScheduleServiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleServiceViewController.swift; sourceTree = "<group>"; };
 		6A86B6752149B5A300E0C036 /* UserSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSession.swift; sourceTree = "<group>"; };
+		6A9367182205D8080030EBE6 /* ResponseViaCep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseViaCep.swift; sourceTree = "<group>"; };
 		6AC2AF352179165B0043987E /* RequestRegisterUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestRegisterUser.swift; sourceTree = "<group>"; };
 		6AC2AF37217916E30043987E /* ResponseDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseDefault.swift; sourceTree = "<group>"; };
 		6AC2AF39217918DA0043987E /* RequestServiceToWasher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestServiceToWasher.swift; sourceTree = "<group>"; };
@@ -103,6 +107,8 @@
 		6AC2AF492179366F0043987E /* ResponseCreateOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseCreateOrder.swift; sourceTree = "<group>"; };
 		6AC2AF4B217936F10043987E /* ItemCreateOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCreateOrder.swift; sourceTree = "<group>"; };
 		6AC2AF4D2179375D0043987E /* RequestOrderItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestOrderItem.swift; sourceTree = "<group>"; };
+		6ADED0BB22086881000942CE /* ServicePrizeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ServicePrizeViewController.xib; path = Carwash/ServicePrizeViewController.xib; sourceTree = SOURCE_ROOT; };
+		6ADED0BD22086981000942CE /* AddSpecificPrizeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSpecificPrizeViewController.swift; sourceTree = "<group>"; };
 		6AE79EAF22007E0F00C1CACB /* Connectivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connectivity.swift; sourceTree = "<group>"; };
 		6AE79EB122009DE400C1CACB /* ManagerTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerTabController.swift; sourceTree = "<group>"; };
 		6AF68F8D21364E46003B233F /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
@@ -144,6 +150,7 @@
 		6A116A5022027579007AD77C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				6ADED0BB22086881000942CE /* ServicePrizeViewController.xib */,
 				6A116A5122027598007AD77C /* RatingViewController.xib */,
 				6A55461F21357C2F008EB5C0 /* Main.storyboard */,
 				6A55462421357C31008EB5C0 /* LaunchScreen.storyboard */,
@@ -181,6 +188,7 @@
 				6AC2AF4B217936F10043987E /* ItemCreateOrder.swift */,
 				6AC2AF4D2179375D0043987E /* RequestOrderItem.swift */,
 				6A6AC47A2182B4F500F29C4B /* AnnotationWasher.swift */,
+				6A9367182205D8080030EBE6 /* ResponseViaCep.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -246,7 +254,6 @@
 		6AF68F8C21364DAE003B233F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				6A116A53220275B1007AD77C /* RatingViewController.swift */,
 				6AF68F8D21364E46003B233F /* InitialViewController.swift */,
 				6AF68F8F21364E70003B233F /* LoginViewController.swift */,
 				6AF68F9121364E7C003B233F /* CreateAccountViewController.swift */,
@@ -259,6 +266,8 @@
 				6A6AC47C2182B6B500F29C4B /* WasherProfileViewController.swift */,
 				6A6AC47E2182C73F00F29C4B /* ScheduleServiceViewController.swift */,
 				6AE79EB122009DE400C1CACB /* ManagerTabController.swift */,
+				6A116A53220275B1007AD77C /* RatingViewController.swift */,
+				6ADED0BD22086981000942CE /* AddSpecificPrizeViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -332,6 +341,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6A6731A421374C0200F4DA65 /* Roboto-Medium.ttf in Resources */,
+				6ADED0BC22086881000942CE /* ServicePrizeViewController.xib in Resources */,
 				6A55462621357C31008EB5C0 /* LaunchScreen.storyboard in Resources */,
 				6A6731A521374C0200F4DA65 /* Roboto-Bold.ttf in Resources */,
 				6A55462321357C31008EB5C0 /* Assets.xcassets in Resources */,
@@ -444,6 +454,7 @@
 				6AC2AF3A217918DA0043987E /* RequestServiceToWasher.swift in Sources */,
 				6A3EEE752146E05100A80E94 /* RestApi.swift in Sources */,
 				6AC2AF3E21791B160043987E /* ResponseItemService.swift in Sources */,
+				6ADED0BE22086981000942CE /* AddSpecificPrizeViewController.swift in Sources */,
 				6A4158FD2136DE3C009A1E6D /* Tab1MapViewController.swift in Sources */,
 				6AC2AF48217936070043987E /* RequestCreateOrder.swift in Sources */,
 				6AF68F8E21364E46003B233F /* InitialViewController.swift in Sources */,
@@ -451,6 +462,7 @@
 				6A3EEE7E2146E34E00A80E94 /* ResponseLogin.swift in Sources */,
 				6A55461C21357C2F008EB5C0 /* AppDelegate.swift in Sources */,
 				6AC2AF46217921450043987E /* ResponseItemOrderItem.swift in Sources */,
+				6A9367192205D8080030EBE6 /* ResponseViaCep.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

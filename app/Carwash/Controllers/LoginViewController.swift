@@ -27,17 +27,9 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
         editEmail.delegate = self
         editPassword.delegate = self
         
-        editEmail.text = "admin@carwash.com"
-        editPassword.text = "123456"
+        editEmail.text = "jorge.brunetto@bluecore.it"
+        editPassword.text = "123456c@"
         
-        //editEmail.text = "admin@carwash.com.br"
-        //editPassword.text = "123456"
-        
-        //editEmail.text = "tonyjj@gmail.com"
-        //editPassword.text = "123456"
-        
-        //editEmail.text = "joao.lavador@hotmail.com"
-        //editPassword.text = "123456c@"
         loadingView.isHidden = true
     }
 

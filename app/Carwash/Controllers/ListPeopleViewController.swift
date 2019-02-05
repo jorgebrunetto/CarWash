@@ -95,13 +95,12 @@ class ListPeopleViewController: UIViewController,UITableViewDelegate,UITableView
         // setar imagem, e chamar metodo para puxar imagem com as iniciais do nome
         imgView.layer.cornerRadius = 0.5 * 40;
         imgView.clipsToBounds = true
-        /*var path:String = "https://ui-avatars.com/api/?background=d3d3d3&color=fff&font-size=0.33&name="
-        if item.Name != nil{
-            path = path + item.Name!
-            path = path.addingPercentEncoding(withAllowedCharacters: .whitespaces)!
-        }
-        let url = URL(string: path)
-        imgView.kf.setImage(with: url)*/
+        
+        let name = item.Name?.replacingOccurrences(of: " ", with: "+")
+        let url = URL(string: "https://ui-avatars.com/api/?rounded=true&font-size=0.33&name=\(name ?? "")")
+        
+        imgView.kf.setImage(with: url)
+
         
         return cell
     }

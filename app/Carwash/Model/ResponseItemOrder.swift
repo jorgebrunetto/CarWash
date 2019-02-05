@@ -21,7 +21,10 @@ class ResponseItemOrder: Mappable {
     var WasherId:Int
     var WasherName:String?
     var Items: [ResponseItemOrderItem]?
-
+    var WasherScoreAverage:Double?
+    var UserScoreAverage:Double?
+    var Evaluation:Int?
+    
     required init?(map: Map) {
         
         OrderId = try! map.value("OrderId")
@@ -33,6 +36,10 @@ class ResponseItemOrder: Mappable {
         UserName = try? map.value("UserName")
         WasherId = try! map.value("WasherId")
         Items = try? map.value("Items")
+        WasherName = try? map.value("WasherName")
+        WasherScoreAverage = try? map.value("WasherScoreAverage")
+        UserScoreAverage = try? map.value("UserScoreAverage")
+        Evaluation = try? map.value("Evaluation")
     }
     
     func mapping(map: Map) {
@@ -44,5 +51,9 @@ class ResponseItemOrder: Mappable {
         UserName <- map["UserName"]
         WasherId <- map["WasherId"]
         Items <- map["Items"]
+        WasherName <- map["WasherName"]
+        WasherScoreAverage <- map["WasherScoreAverage"]
+        UserScoreAverage <- map["UserScoreAverage"]
+        Evaluation <- map["Evaluation"]
     }
 }

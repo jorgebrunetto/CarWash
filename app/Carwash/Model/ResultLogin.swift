@@ -32,6 +32,9 @@ class ResultLogin: Mappable {
     var Active:Bool
     var Token:String
     
+    var OrderAmount:Int?
+    var ScoreAverage:Double?
+    
     required init?(map: Map) {
         Id = try! map.value("Id")
         RoleId = try! map.value("RoleId")
@@ -53,6 +56,8 @@ class ResultLogin: Mappable {
         Longitude = try? map.value("Longitude")
         Active = try! map.value("Active")
         Token = try! map.value("Token")
+        OrderAmount = try? map.value("OrderAmount")
+        ScoreAverage = try? map.value("ScoreAverage")
     }
     
     func mapping(map: Map) {
@@ -77,6 +82,7 @@ class ResultLogin: Mappable {
         Longitude <- map["Longitude"]
         Active <- map["Active"]
         Token <- map["Token"]
- 
+        OrderAmount <- map["OrderAmount"]
+        ScoreAverage <- map["ScoreAverage"]
     }
 }
