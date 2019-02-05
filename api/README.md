@@ -64,6 +64,8 @@ user:admin, pass:CirioSete
       "Latitude": "-19,9547039",
       "Longitude": "-44,2058859",
       "Active": true,
+	  "OrderAmount": 2,
+	  "ScoreAverage": 1.33,
       "Token": "HrNss8vHI1XusGlWfhPsUCqZOoupE8b+KMuFAMyrg=="
    }
 }
@@ -461,6 +463,9 @@ user:admin, pass:CirioSete
          "UserName": "Lucas Martins",
          "WasherId": 3,
          "WasherName": "João Victor",
+		 "Evaluation": 1,
+		 "UserScoreAverage": 1.33,
+		 "WasherScoreAverage": 1,
          "Itens": [
                {
                   "Id": 1,
