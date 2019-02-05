@@ -80,6 +80,11 @@ class Tab2MySchedulesViewController: UIViewController, UITableViewDataSource, UI
         let button_reject = cell.viewWithTag(10) as! UIButton
         let button_evaluate = cell.viewWithTag(102) as! UIButton
         
+        let labelClient = cell.viewWithTag(6) as! UILabel
+        let labelWasher = cell.viewWithTag(7) as! UILabel
+        let labelYourEvaluation = cell.viewWithTag(8) as! UILabel
+        let rating = cell.viewWithTag(9) as! CosmosView
+        
         button_accept.titleLabel?.tag = indexPath.row
         button_reject.titleLabel?.tag = indexPath.row
         button_evaluate.titleLabel?.tag = indexPath.row
@@ -90,12 +95,28 @@ class Tab2MySchedulesViewController: UIViewController, UITableViewDataSource, UI
         
         labelStatus.text = ""
         labelSchedule.text = ""
+        
+        labelClient.text = ""
+        labelWasher.text = ""
+        
+        labelYourEvaluation.isHidden = true
+        rating.settings.updateOnTouch = false
+        rating.isHidden = true
+        
         let item = listOrders[indexPath.row]
+        
+        if item.UserName != nil{
+            labelClient.text = "Cliente: " + item.UserName!
+        }
+        if item.WasherName != nil{
+            labelWasher.text = "Lavador:" + item.WasherName!
+        }
         
         // Esconder Aceitar/reijeitar
         button_accept.isHidden = true
         button_reject.isHidden = true
         button_evaluate.isHidden = true
+        
         if item.Status == 1{
             // iniciado
            
@@ -142,7 +163,15 @@ class Tab2MySchedulesViewController: UIViewController, UITableViewDataSource, UI
                 labelSchedule.text = Utils.formatDate(inputDate: item.ScheduledDateTime!, inputFormat: "yyyy-MM-dd'T'HH:mm:ss", endFormat: "dd/MM/yyyy HH:mm:ss")
             }
             
-            button_evaluate.isHidden = false
+            if item.Evaluation != nil{
+                labelYourEvaluation.isHidden = false
+                rating.settings.updateOnTouch = false
+                rating.isHidden = false
+                rating.rating = Double(item.Evaluation!)
+            }
+            else{
+                button_evaluate.isHidden = false
+            }
         }
         else if item.Status == 5{
             // finalizado
@@ -224,9 +253,14 @@ class Tab2MySchedulesViewController: UIViewController, UITableViewDataSource, UI
            
             let api = RestApi()
             let request = RequestEvaluate()
-            request.Score = String(round(ratingVC.cosmosStarRating.rating))
+            request.Score = String(Int(ratingVC.cosmosStarRating.rating))
             request.UserIdFrom = String(UserSession.sharedInstance.resultLogin.Id)
-            request.UserIdTo = String(item.UserId)
+            if UserSession.sharedInstance.resultLogin.RoleId == 1{
+                request.UserIdTo = String(item.WasherId)
+            }
+            else{
+                request.UserIdTo = String(item.UserId)
+            }
             request.Token = UserSession.sharedInstance.resultLogin.Token
             request.OrderedId = item.OrderId
             
@@ -237,6 +271,8 @@ class Tab2MySchedulesViewController: UIViewController, UITableViewDataSource, UI
                 let alert = UIAlertController(title: "Sucesso", message: response.Result, preferredStyle: UIAlertController.Style.alert)
                 alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
+                
+                self.fillData()
             }, onFailureCallback: { (errorMessage) -> (Void) in
                 
                 self.stopLoading()

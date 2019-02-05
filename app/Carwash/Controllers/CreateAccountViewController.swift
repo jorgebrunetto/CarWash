@@ -90,6 +90,7 @@ class CreateAccountViewController: UIViewController,UITextFieldDelegate,UITableV
             editText.placeholder = "Nome"
             editText.selectedTitle = "Nome"
             editText.title = "Nome"
+     
 
             editText.isSecureTextEntry = false
             editText.keyboardType = UIKeyboardType.namePhonePad
@@ -104,7 +105,8 @@ class CreateAccountViewController: UIViewController,UITextFieldDelegate,UITableV
             cell = tableView.dequeueReusableCell(withIdentifier: "CellText")
             let imgView = cell?.viewWithTag(1) as! UIImageView
             let editText = cell?.viewWithTag(2) as! SkyFloatingLabelTextField
-            
+
+
             imgView.image = UIImage(named: "email-outline")
             editText.placeholder = "E-mail"
             editText.selectedTitle = "E-mail"
@@ -123,7 +125,8 @@ class CreateAccountViewController: UIViewController,UITextFieldDelegate,UITableV
             cell = tableView.dequeueReusableCell(withIdentifier: "CellText")
             let imgView = cell?.viewWithTag(1) as! UIImageView
             let editText = cell?.viewWithTag(2) as! SkyFloatingLabelTextField
-            
+
+
             imgView.image = UIImage(named: "lock")
             editText.placeholder = "Senha"
             editText.selectedTitle = "Senha"
@@ -142,7 +145,8 @@ class CreateAccountViewController: UIViewController,UITextFieldDelegate,UITableV
             cell = tableView.dequeueReusableCell(withIdentifier: "CellText")
             let imgView = cell?.viewWithTag(1) as! UIImageView
             let editText = cell?.viewWithTag(2) as! SkyFloatingLabelTextField
-            
+
+
             imgView.image = UIImage(named: "account-card-details")
             editText.placeholder = "Documento"
             editText.selectedTitle = "Documento"
@@ -161,7 +165,8 @@ class CreateAccountViewController: UIViewController,UITextFieldDelegate,UITableV
             cell = tableView.dequeueReusableCell(withIdentifier: "CellCombo")
             let imgView = cell?.viewWithTag(1) as! UIImageView
             let editText = cell?.viewWithTag(2) as! SkyFloatingLabelTextField
-            
+
+
             imgView.image = UIImage(named: "cake-variant")
             editText.placeholder = "Data Nascimento"
             editText.selectedTitle = "Data Nascimento"
@@ -184,6 +189,8 @@ class CreateAccountViewController: UIViewController,UITextFieldDelegate,UITableV
             
             imgView.image = UIImage(named: "map-marker")
             editText.placeholder = "Cep"
+    
+            editText.delegate = self
             editText.selectedTitle = "Cep"
             editText.title = "Cep"
 
@@ -200,7 +207,7 @@ class CreateAccountViewController: UIViewController,UITextFieldDelegate,UITableV
             cell = tableView.dequeueReusableCell(withIdentifier: "CellText")
             let imgView = cell?.viewWithTag(1) as! UIImageView
             let editText = cell?.viewWithTag(2) as! SkyFloatingLabelTextField
-            
+
             imgView.image = UIImage(named: "map-marker")
             editText.placeholder = "Endereço"
             editText.selectedTitle = "Endereço"
@@ -219,7 +226,7 @@ class CreateAccountViewController: UIViewController,UITextFieldDelegate,UITableV
             cell = tableView.dequeueReusableCell(withIdentifier: "CellText")
             let imgView = cell?.viewWithTag(1) as! UIImageView
             let editText = cell?.viewWithTag(2) as! SkyFloatingLabelTextField
-            
+
             imgView.image = UIImage(named: "map-marker")
             editText.placeholder = "Número"
             editText.selectedTitle = "Número"
@@ -238,7 +245,8 @@ class CreateAccountViewController: UIViewController,UITextFieldDelegate,UITableV
             cell = tableView.dequeueReusableCell(withIdentifier: "CellText")
             let imgView = cell?.viewWithTag(1) as! UIImageView
             let editText = cell?.viewWithTag(2) as! SkyFloatingLabelTextField
-            
+    
+
             imgView.image = UIImage(named: "map-marker")
             editText.placeholder = "Complemento"
             editText.selectedTitle = "Complemento"
@@ -257,7 +265,8 @@ class CreateAccountViewController: UIViewController,UITextFieldDelegate,UITableV
             cell = tableView.dequeueReusableCell(withIdentifier: "CellText")
             let imgView = cell?.viewWithTag(1) as! UIImageView
             let editText = cell?.viewWithTag(2) as! SkyFloatingLabelTextField
-            
+      
+
             imgView.image = UIImage(named: "map-marker")
             editText.placeholder = "Bairro"
             editText.selectedTitle = "Bairro"
@@ -276,7 +285,8 @@ class CreateAccountViewController: UIViewController,UITextFieldDelegate,UITableV
             cell = tableView.dequeueReusableCell(withIdentifier: "CellText")
             let imgView = cell?.viewWithTag(1) as! UIImageView
             let editText = cell?.viewWithTag(2) as! SkyFloatingLabelTextField
-            
+
+
             imgView.image = UIImage(named: "city")
             editText.placeholder = "Cidade"
             editText.selectedTitle = "Cidade"
@@ -314,7 +324,8 @@ class CreateAccountViewController: UIViewController,UITextFieldDelegate,UITableV
             cell = tableView.dequeueReusableCell(withIdentifier: "CellText")
             let imgView = cell?.viewWithTag(1) as! UIImageView
             let editText = cell?.viewWithTag(2) as! SkyFloatingLabelTextField
-            
+    
+
             imgView.image = UIImage(named: "cellphone-iphone")
             editText.placeholder = "Celular"
             editText.selectedTitle = "Celular"
@@ -372,7 +383,12 @@ class CreateAccountViewController: UIViewController,UITextFieldDelegate,UITableV
                 
             }, cancel: { ActionStringCancelBlock in return }, origin: tableView)
             let secondsInWeek: TimeInterval = 7 * 24 * 60 * 60;
-            datePicker?.minimumDate = Date(timeInterval: -secondsInWeek, since: Date())
+            
+            let dateFormatterGet = DateFormatter()
+            dateFormatterGet.dateFormat = "dd/MM/yyyy"
+            
+            let date:Date = dateFormatterGet.date(from: "01/01/1940")!
+            datePicker?.minimumDate = date
             datePicker?.maximumDate = Date(timeInterval: secondsInWeek, since: Date())
             
             datePicker?.show()
@@ -411,11 +427,47 @@ class CreateAccountViewController: UIViewController,UITextFieldDelegate,UITableV
     }
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         let field = textField as! SkyFloatingLabelTextField
-        if field.titleLabel.tag == 0 || field.titleLabel.tag == 5 || field.titleLabel.tag == 12{
+        if field.titleLabel.tag == 0 || field.titleLabel.tag == 5 || field.titleLabel.tag == 12 || field.titleLabel.tag == 7 || field.titleLabel.tag == 10 || field.titleLabel.tag == 11{
             return false
         }
         return true
     }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        let edittext = textField as! SkyFloatingLabelTextField
+        if edittext.titleLabel.tag == 6{
+            if range.location == 7{
+                let api = RestApi()
+                api.getAddressByCep(inputCep: textField.text!+string, onSuccessCallback: { (responseCep) -> (Void) in
+                    
+                    self.requestUser.Cep = ""
+                    self.requestUser.Address = ""
+                    self.requestUser.City = ""
+                    self.requestUser.State = ""
+                    self.requestUser.District = ""
+                    
+                    if responseCep.cep != nil{
+                        self.requestUser.Cep = responseCep.cep
+                    }
+                    if responseCep.logradouro != nil{
+                        self.requestUser.Address = responseCep.logradouro
+                    }
+                    if responseCep.localidade != nil{
+                        self.requestUser.City = responseCep.localidade
+                    }
+                    if responseCep.uf != nil{
+                        self.requestUser.State = responseCep.uf
+                    }
+                    self.tableView.reloadData()
+                }) { (responseError) -> (Void) in
+                    
+                }
+            }
+        }
+        return true
+    }
+    
     @objc func textFieldDidChange(_ textField: UITextField) {
 
         //your code
@@ -461,23 +513,131 @@ class CreateAccountViewController: UIViewController,UITextFieldDelegate,UITableV
         loadingView.isHidden = false
         loadingView.startAnimating()
         // Fazer validacoes
-        
-        let api = RestApi()
-        api.registerUser(req: requestUser, onSuccessCallback: { (response) -> (Void) in
-            
+        if requestUser.RoleId == 0{
             self.loadingView.isHidden = true
             sender.titleString = "REGISTRAR"
-            
-            let alert = UIAlertController(title: "Sucesso", message: response.Result, preferredStyle: UIAlertController.Style.alert)
+            let alert = UIAlertController(title: "Campos inválidos", message: Messages.SELECT_A_ROLE, preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
-        }) { (failureMessage) -> (Void) in
+        }
+        else if requestUser.Name == ""{
             self.loadingView.isHidden = true
             sender.titleString = "REGISTRAR"
-            
-            let alert = UIAlertController(title: "Erro", message: failureMessage, preferredStyle: UIAlertController.Style.alert)
+            let alert = UIAlertController(title: "Campos inválidos", message: Messages.FILL_NAME, preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
+        }
+        else if requestUser.Email == ""{
+            self.loadingView.isHidden = true
+            sender.titleString = "REGISTRAR"
+            let alert = UIAlertController(title: "Campos inválidos", message: Messages.FILL_EMAIL, preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+        else if !Utils.validateEmail(inputEmail: requestUser.Email!){
+            self.loadingView.isHidden = true
+            sender.titleString = "REGISTRAR"
+            let alert = UIAlertController(title: "Campos inválidos", message: Messages.INVALID_EMAIL, preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+        else if requestUser.Password == ""{
+            self.loadingView.isHidden = true
+            sender.titleString = "REGISTRAR"
+            let alert = UIAlertController(title: "Campos inválidos", message: Messages.FILL_PASSWORD, preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+        else if requestUser.Document == ""{
+            self.loadingView.isHidden = true
+            sender.titleString = "REGISTRAR"
+            let alert = UIAlertController(title: "Campos inválidos", message: Messages.FILL_DOCUMENT, preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+        else if requestUser.BirthDate == ""{
+            self.loadingView.isHidden = true
+            sender.titleString = "REGISTRAR"
+            let alert = UIAlertController(title: "Campos inválidos", message: Messages.FILL_BIRTHDAY, preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+        else if requestUser.Cep == ""{
+            self.loadingView.isHidden = true
+            sender.titleString = "REGISTRAR"
+            let alert = UIAlertController(title: "Campos inválidos", message: Messages.FILL_CEP, preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+        else if requestUser.Address == ""{
+            self.loadingView.isHidden = true
+            sender.titleString = "REGISTRAR"
+            let alert = UIAlertController(title: "Campos inválidos", message: Messages.FILL_ADDRESS, preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+        else if requestUser.AddressNumber == 0{
+            self.loadingView.isHidden = true
+            sender.titleString = "REGISTRAR"
+            let alert = UIAlertController(title: "Campos inválidos", message: Messages.FILL_NUMBER_ADDRESS, preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+        else if requestUser.District == ""{
+            self.loadingView.isHidden = true
+            sender.titleString = "REGISTRAR"
+            let alert = UIAlertController(title: "Campos inválidos", message: Messages.FILL_NEIGHBOOR, preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+        else if requestUser.City == ""{
+            self.loadingView.isHidden = true
+            sender.titleString = "REGISTRAR"
+            let alert = UIAlertController(title: "Campos inválidos", message: Messages.FILL_CITY, preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+        else if requestUser.State == ""{
+            self.loadingView.isHidden = true
+            sender.titleString = "REGISTRAR"
+            let alert = UIAlertController(title: "Campos inválidos", message: Messages.FILL_STATE, preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+        else if requestUser.PhoneNumber == ""{
+            self.loadingView.isHidden = true
+            sender.titleString = "REGISTRAR"
+            let alert = UIAlertController(title: "Campos inválidos", message: Messages.FILL_PHONE_NUMBER, preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+        else if requestUser.PhoneNumber?.count != 11{
+            self.loadingView.isHidden = true
+            sender.titleString = "REGISTRAR"
+            let alert = UIAlertController(title: "Campos inválidos", message: Messages.INVALID_PHONE_NUMBER, preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+        else {
+            let api = RestApi()
+            api.registerUser(req: requestUser, onSuccessCallback: { (response) -> (Void) in
+                
+                self.loadingView.isHidden = true
+                sender.titleString = "REGISTRAR"
+                
+                let alert = UIAlertController(title: "Sucesso", message: response.Result, preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: {(alert: UIAlertAction!) in
+                        self.navigationController?.popViewController(animated: true)
+                }))
+                self.present(alert, animated: true, completion: nil)
+            }) { (failureMessage) -> (Void) in
+                self.loadingView.isHidden = true
+                sender.titleString = "REGISTRAR"
+                
+                let alert = UIAlertController(title: "Erro", message: failureMessage, preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            }
         }
     }
 

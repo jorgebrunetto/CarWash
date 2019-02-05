@@ -184,7 +184,7 @@ class RestApi: NSObject {
         ]
         
         Alamofire
-            .request(baseURL + "/Api/ApiUser/ListAllServices", method: .post, parameters: params  , encoding: JSONEncoding.default, headers: headers)
+            .request(baseURL + "/Api/ApiUser/AddServiceToWasher", method: .post, parameters: params  , encoding: JSONEncoding.default, headers: headers)
             .validate(contentType: ["application/json"])
             .responseJSON { response in
                 
@@ -296,7 +296,7 @@ class RestApi: NSObject {
      O cliente poderá visualizar no mapa os lavadores e lava-rápidos mais próximos de sua residência ou de uma região específica.
      */
     func apiFindWashersArround(token:String, radius:Int, latitude:String, longitude:String, onSuccessCallback: @escaping (ResponseListWashers) -> (Void), onFailureCallback: @escaping (String) -> (Void)) {
-        let params = ["Token":token, "MaxRadius":99999, "Latitude":latitude, "Longitude":longitude] as [String : Any]
+        let params = ["Token":token, "MaxRadius":radius, "Latitude":latitude, "Longitude":longitude] as [String : Any]
         
         let credentialData = "\(user):\(pass)".data(using: String.Encoding.utf8)!
         let base64Credentials = credentialData.base64EncodedString(options: [])
@@ -320,10 +320,12 @@ class RestApi: NSObject {
                     else{
                         if(result?.Status)!{
                             if(result?.listWashers == nil){
-                                onFailureCallback(Messages.NOT_FOUND_DATA)
+                                result?.listWashers = [ResponseWashers]()
+                                onSuccessCallback(result!)
                             }
                             else if(result?.listWashers?.count == 0){
-                                onFailureCallback(Messages.NOT_FOUND_DATA)
+                                onSuccessCallback(result!)
+                                //onFailureCallback(Messages.NOT_FOUND_DATA)
                             }
                             else{
                                 onSuccessCallback(result!)
@@ -518,6 +520,30 @@ class RestApi: NSObject {
                 }
                 else{
                     onFailureCallback(Messages.CANT_COMPLETE_REQUEST)
+                }
+        }
+    }
+    
+    func getAddressByCep(inputCep:String, onSuccessCallback: @escaping (ResponseViaCep) -> (Void), onFailureCallback: @escaping (String) -> (Void)){
+       // https://viacep.com.br/ws/13312280/json/
+    
+        let url  = "https://viacep.com.br/ws/\(inputCep)/json"
+        Alamofire
+            .request(url, method: .get, parameters: nil  , encoding: JSONEncoding.default, headers: nil)
+            .validate(contentType: ["application/json"])
+            .responseJSON { response in
+                
+                if let data = response.data, let jsonUtf8Text = String(data: data, encoding: .utf8) {
+                    // original server data as UTF8 string
+                    //debugPrint(jsonUtf8Text)
+                    let result =  (ResponseViaCep)(JSONString: jsonUtf8Text)
+                    
+                    if(result != nil){
+                        onSuccessCallback(result!)
+                    }
+                    else{
+                       onFailureCallback("Nenhum dado encontrado")
+                    }
                 }
         }
     }
