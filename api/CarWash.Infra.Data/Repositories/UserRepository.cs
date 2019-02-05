@@ -204,7 +204,7 @@ namespace BasicDDD.Infra.Data.Repositories
 
                 var user = con.Query<User>(sql).ToList().FirstOrDefault();
 
-                if(user.EvaluationAmount > 0)
+                if(user != null && user.EvaluationAmount > 0)
                     user.ScoreAverage = Math.Round(((decimal)user.ScoreSum / (decimal)user.EvaluationAmount), 2);
 
                 return user;

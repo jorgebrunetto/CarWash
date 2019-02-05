@@ -151,13 +151,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/03/2019 19:53:46</publishTime>
     </File>
     <File Include="bin/BasicDDD.BasicApplication.dll">
-      <publishTime>02/03/2019 19:53:52</publishTime>
+      <publishTime>02/05/2019 17:57:08</publishTime>
     </File>
     <File Include="bin/BasicDDD.Domain.dll">
       <publishTime>02/03/2019 19:53:44</publishTime>
     </File>
     <File Include="bin/BasicDDD.Infra.Data.dll">
-      <publishTime>02/03/2019 19:53:45</publishTime>
+      <publishTime>02/05/2019 17:57:02</publishTime>
     </File>
     <File Include="bin/CarWash.Util.dll">
       <publishTime>02/01/2019 18:03:09</publishTime>
