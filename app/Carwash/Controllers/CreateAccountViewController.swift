@@ -534,7 +534,7 @@ class CreateAccountViewController: UIViewController,UITextFieldDelegate,UITableV
             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
-        else if !Utils.validateEmail(inputEmail: requestUser.Email!){
+        else if !Validate.validateEmail(email: requestUser.Email!){
             self.loadingView.isHidden = true
             sender.titleString = "REGISTRAR"
             let alert = UIAlertController(title: "Campos inválidos", message: Messages.INVALID_EMAIL, preferredStyle: UIAlertController.Style.alert)

@@ -175,6 +175,7 @@ class RestApi: NSObject {
      */
     func addServiceToWasher(req:RequestServiceToWasher, onSuccessCallback: @escaping (ResponseDefault) -> (Void), onFailureCallback: @escaping (String) -> (Void)){
         
+        //let json = req.toJSONString()
         let params = req.toJSON()
         let credentialData = "\(user):\(pass)".data(using: String.Encoding.utf8)!
         let base64Credentials = credentialData.base64EncodedString(options: [])
@@ -196,8 +197,16 @@ class RestApi: NSObject {
                     if(result == nil){
                         onFailureCallback(Messages.CANT_COMPLETE_REQUEST)
                     }
-                    else{
+                    else if (result?.Status)!{
                         onSuccessCallback(result!)
+                    }
+                    else{
+                        if result?.Result != nil{
+                            onFailureCallback((result?.Result!)!)
+                        }
+                        else{
+                            onFailureCallback(Messages.CANT_COMPLETE_REQUEST)
+                        }
                     }
                 }
                 else{

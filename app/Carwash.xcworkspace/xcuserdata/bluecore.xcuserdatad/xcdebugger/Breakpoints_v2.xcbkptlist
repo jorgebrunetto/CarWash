@@ -10,13 +10,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Carwash/Controllers/LoginViewController.swift"
-            timestampString = "570982683.800575"
+            timestampString = "571149088.0299259"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "31"
             endingLineNumber = "31"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -26,13 +26,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Carwash/Controllers/LoginViewController.swift"
-            timestampString = "570982683.800764"
+            timestampString = "571149088.035439"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "112"
             endingLineNumber = "112"
-            landmarkName = "didReceiveMemoryWarning()"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -74,7 +74,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Carwash/Api/RestApi.swift"
-            timestampString = "571020675.667798"
+            timestampString = "571323795.090729"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "33"
@@ -90,7 +90,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Carwash/Api/RestApi.swift"
-            timestampString = "571020675.667924"
+            timestampString = "571323795.101992"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "19"
@@ -106,7 +106,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Carwash/Api/RestApi.swift"
-            timestampString = "571020675.668002"
+            timestampString = "571323795.102356"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "50"
@@ -122,7 +122,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Carwash/Api/RestApi.swift"
-            timestampString = "571020675.6680731"
+            timestampString = "571323795.1026061"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "35"
@@ -138,13 +138,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Carwash/Controllers/LoginViewController.swift"
-            timestampString = "570982683.800997"
+            timestampString = "571149088.0521621"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "117"
             endingLineNumber = "117"
-            landmarkName = "LoginViewController"
-            landmarkType = "3">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -218,7 +218,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Carwash/Api/RestApi.swift"
-            timestampString = "571020675.6682889"
+            timestampString = "571323795.103157"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "88"
@@ -282,11 +282,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Carwash/Api/RestApi.swift"
-            timestampString = "571020675.668476"
+            timestampString = "571323795.103523"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "308"
-            endingLineNumber = "308"
+            startingLineNumber = "317"
+            endingLineNumber = "317"
             landmarkName = "apiFindWashersArround(token:radius:latitude:longitude:onSuccessCallback:onFailureCallback:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -298,11 +298,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Carwash/Api/RestApi.swift"
-            timestampString = "571020675.668571"
+            timestampString = "571323795.103984"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "303"
-            endingLineNumber = "303"
+            startingLineNumber = "312"
+            endingLineNumber = "312"
             landmarkName = "apiFindWashersArround(token:radius:latitude:longitude:onSuccessCallback:onFailureCallback:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -314,11 +314,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Carwash/Api/RestApi.swift"
-            timestampString = "571020675.66871"
+            timestampString = "571323795.1043611"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "313"
-            endingLineNumber = "313"
+            startingLineNumber = "322"
+            endingLineNumber = "322"
             landmarkName = "apiFindWashersArround(token:radius:latitude:longitude:onSuccessCallback:onFailureCallback:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -330,11 +330,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Carwash/Api/RestApi.swift"
-            timestampString = "571020675.668807"
+            timestampString = "571323795.104636"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "297"
-            endingLineNumber = "297"
+            startingLineNumber = "306"
+            endingLineNumber = "306"
             landmarkName = "RestApi"
             landmarkType = "3">
          </BreakpointContent>
@@ -410,11 +410,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Carwash/Api/RestApi.swift"
-            timestampString = "571020675.669005"
+            timestampString = "571323795.105106"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "264"
-            endingLineNumber = "264"
+            startingLineNumber = "273"
+            endingLineNumber = "273"
             landmarkName = "listOrderByUser(token:onSuccessCallback:onFailureCallback:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -426,7 +426,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Carwash/Api/RestApi.swift"
-            timestampString = "571020675.669192"
+            timestampString = "571323795.105473"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "149"
@@ -442,11 +442,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Carwash/Controllers/WasherProfileViewController.swift"
-            timestampString = "570982683.801486"
+            timestampString = "571708506.786208"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "141"
-            endingLineNumber = "141"
+            startingLineNumber = "147"
+            endingLineNumber = "147"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -458,11 +458,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Carwash/Api/RestApi.swift"
-            timestampString = "571020675.6693389"
+            timestampString = "571323795.105721"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "395"
-            endingLineNumber = "395"
+            startingLineNumber = "404"
+            endingLineNumber = "404"
             landmarkName = "createOrder(req:onSuccessCallback:onFailureCallback:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -474,11 +474,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Carwash/Api/RestApi.swift"
-            timestampString = "571020675.669445"
+            timestampString = "571323795.105854"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "412"
-            endingLineNumber = "412"
+            startingLineNumber = "421"
+            endingLineNumber = "421"
             landmarkName = "createOrder(req:onSuccessCallback:onFailureCallback:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -490,11 +490,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Carwash/Api/RestApi.swift"
-            timestampString = "571020675.669523"
+            timestampString = "571323795.105989"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "360"
-            endingLineNumber = "360"
+            startingLineNumber = "369"
+            endingLineNumber = "369"
             landmarkName = "listServicesByWasher(token:washerID:onSuccessCallback:onFailureCallback:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -506,11 +506,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Carwash/Api/RestApi.swift"
-            timestampString = "571020675.669594"
+            timestampString = "571323795.106104"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "370"
-            endingLineNumber = "370"
+            startingLineNumber = "379"
+            endingLineNumber = "379"
             landmarkName = "listServicesByWasher(token:washerID:onSuccessCallback:onFailureCallback:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -522,11 +522,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Carwash/Api/RestApi.swift"
-            timestampString = "571020675.669665"
+            timestampString = "571323795.106337"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "246"
-            endingLineNumber = "246"
+            startingLineNumber = "255"
+            endingLineNumber = "255"
             landmarkName = "RestApi"
             landmarkType = "3">
          </BreakpointContent>
@@ -554,7 +554,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Carwash/Controllers/CreateAccountViewController.swift"
-            timestampString = "571020675.6698411"
+            timestampString = "571146119.863726"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "426"
@@ -570,7 +570,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Carwash/Controllers/CreateAccountViewController.swift"
-            timestampString = "571020675.6705281"
+            timestampString = "571146119.90856"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "427"
@@ -586,7 +586,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Carwash/Controllers/CreateAccountViewController.swift"
-            timestampString = "571020675.670994"
+            timestampString = "571146119.9139529"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "474"
@@ -602,7 +602,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Carwash/Controllers/CreateAccountViewController.swift"
-            timestampString = "571020675.671551"
+            timestampString = "571146119.914668"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "358"
@@ -618,7 +618,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Carwash/Controllers/CreateAccountViewController.swift"
-            timestampString = "571020675.672015"
+            timestampString = "571146119.915302"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "429"
@@ -634,7 +634,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Carwash/Api/RestApi.swift"
-            timestampString = "571020675.672407"
+            timestampString = "571323795.107071"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "91"
@@ -650,7 +650,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Carwash/Api/RestApi.swift"
-            timestampString = "571020675.672516"
+            timestampString = "571323795.107326"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "42"
@@ -666,11 +666,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Carwash/Api/RestApi.swift"
-            timestampString = "571020675.6725889"
+            timestampString = "571323795.107528"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "312"
-            endingLineNumber = "312"
+            startingLineNumber = "321"
+            endingLineNumber = "321"
             landmarkName = "apiFindWashersArround(token:radius:latitude:longitude:onSuccessCallback:onFailureCallback:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -682,11 +682,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Carwash/Api/RestApi.swift"
-            timestampString = "571020675.672658"
+            timestampString = "571323795.107723"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "317"
-            endingLineNumber = "317"
+            startingLineNumber = "326"
+            endingLineNumber = "326"
             landmarkName = "apiFindWashersArround(token:radius:latitude:longitude:onSuccessCallback:onFailureCallback:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -714,11 +714,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Carwash/Api/RestApi.swift"
-            timestampString = "571020675.67276"
+            timestampString = "571323795.10795"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "369"
-            endingLineNumber = "369"
+            startingLineNumber = "378"
+            endingLineNumber = "378"
             landmarkName = "listServicesByWasher(token:washerID:onSuccessCallback:onFailureCallback:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -746,7 +746,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Carwash/Controllers/Tab5ProfileViewController.swift"
-            timestampString = "570982683.8027821"
+            timestampString = "571149088.060082"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "132"
@@ -762,7 +762,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Carwash/Controllers/Tab5ProfileViewController.swift"
-            timestampString = "570982683.8029"
+            timestampString = "571149088.060178"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "124"
@@ -778,7 +778,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Carwash/Controllers/Tab5ProfileViewController.swift"
-            timestampString = "570982683.802986"
+            timestampString = "571149088.060281"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "196"
@@ -794,7 +794,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Carwash/Controllers/Tab5ProfileViewController.swift"
-            timestampString = "570982683.8031141"
+            timestampString = "571149088.0603369"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "256"
@@ -806,15 +806,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Carwash/Api/RestApi.swift"
-            timestampString = "571020675.672911"
+            timestampString = "571323795.108274"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "191"
-            endingLineNumber = "191"
+            startingLineNumber = "192"
+            endingLineNumber = "192"
             landmarkName = "addServiceToWasher(req:onSuccessCallback:onFailureCallback:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -826,11 +826,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Carwash/Api/RestApi.swift"
-            timestampString = "571020675.672985"
+            timestampString = "571323795.108435"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "180"
-            endingLineNumber = "180"
+            startingLineNumber = "181"
+            endingLineNumber = "181"
             landmarkName = "addServiceToWasher(req:onSuccessCallback:onFailureCallback:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -842,11 +842,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Carwash/Api/RestApi.swift"
-            timestampString = "571020675.673054"
+            timestampString = "571323795.1086169"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "372"
-            endingLineNumber = "372"
+            startingLineNumber = "381"
+            endingLineNumber = "381"
             landmarkName = "listServicesByWasher(token:washerID:onSuccessCallback:onFailureCallback:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -858,11 +858,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Carwash/Api/RestApi.swift"
-            timestampString = "571020675.673121"
+            timestampString = "571323795.108796"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "457"
-            endingLineNumber = "457"
+            startingLineNumber = "466"
+            endingLineNumber = "466"
             landmarkName = "acceptOrder(token:orderID:onSuccessCallback:onFailureCallback:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -874,11 +874,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Carwash/Api/RestApi.swift"
-            timestampString = "571020675.6731991"
+            timestampString = "571323795.1089211"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "462"
-            endingLineNumber = "462"
+            startingLineNumber = "471"
+            endingLineNumber = "471"
             landmarkName = "acceptOrder(token:orderID:onSuccessCallback:onFailureCallback:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -890,11 +890,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Carwash/Api/RestApi.swift"
-            timestampString = "571020675.673275"
+            timestampString = "571323795.109024"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "494"
-            endingLineNumber = "494"
+            startingLineNumber = "503"
+            endingLineNumber = "503"
             landmarkName = "rejectOrder(token:orderID:onSuccessCallback:onFailureCallback:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -906,11 +906,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Carwash/Api/RestApi.swift"
-            timestampString = "571020675.673458"
+            timestampString = "571323795.10912"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "504"
-            endingLineNumber = "504"
+            startingLineNumber = "513"
+            endingLineNumber = "513"
             landmarkName = "rejectOrder(token:orderID:onSuccessCallback:onFailureCallback:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -922,11 +922,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Carwash/Api/RestApi.swift"
-            timestampString = "571020675.673581"
+            timestampString = "571323795.109247"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "222"
-            endingLineNumber = "222"
+            startingLineNumber = "231"
+            endingLineNumber = "231"
             landmarkName = "evaluateUser(req:onSuccessCallback:onFailureCallback:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -938,11 +938,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Carwash/Api/RestApi.swift"
-            timestampString = "571020675.673664"
+            timestampString = "571323795.109355"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "227"
-            endingLineNumber = "227"
+            startingLineNumber = "236"
+            endingLineNumber = "236"
             landmarkName = "evaluateUser(req:onSuccessCallback:onFailureCallback:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -954,11 +954,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Carwash/Api/RestApi.swift"
-            timestampString = "571020675.673746"
+            timestampString = "571323795.109435"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "373"
-            endingLineNumber = "373"
+            startingLineNumber = "382"
+            endingLineNumber = "382"
             landmarkName = "listServicesByWasher(token:washerID:onSuccessCallback:onFailureCallback:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -970,11 +970,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Carwash/Api/RestApi.swift"
-            timestampString = "571020675.673875"
+            timestampString = "571323795.109557"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "406"
-            endingLineNumber = "406"
+            startingLineNumber = "415"
+            endingLineNumber = "415"
             landmarkName = "createOrder(req:onSuccessCallback:onFailureCallback:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -986,11 +986,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Carwash/Api/RestApi.swift"
-            timestampString = "571020675.674065"
+            timestampString = "571323795.109661"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "411"
-            endingLineNumber = "411"
+            startingLineNumber = "420"
+            endingLineNumber = "420"
             landmarkName = "createOrder(req:onSuccessCallback:onFailureCallback:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1002,11 +1002,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Carwash/Controllers/WasherProfileViewController.swift"
-            timestampString = "570982683.803391"
+            timestampString = "571708506.799538"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1018,11 +1018,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Carwash/Api/RestApi.swift"
-            timestampString = "571020675.674397"
+            timestampString = "571323795.109774"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "307"
-            endingLineNumber = "307"
+            startingLineNumber = "316"
+            endingLineNumber = "316"
             landmarkName = "apiFindWashersArround(token:radius:latitude:longitude:onSuccessCallback:onFailureCallback:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1034,11 +1034,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Carwash/Api/RestApi.swift"
-            timestampString = "571020675.674737"
+            timestampString = "571323795.109866"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "223"
-            endingLineNumber = "223"
+            startingLineNumber = "232"
+            endingLineNumber = "232"
             landmarkName = "evaluateUser(req:onSuccessCallback:onFailureCallback:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1050,7 +1050,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Carwash/Controllers/CreateAccountViewController.swift"
-            timestampString = "571020675.674932"
+            timestampString = "571146119.916571"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "622"
@@ -1066,7 +1066,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Carwash/Controllers/Tab5ProfileViewController.swift"
-            timestampString = "570982683.803912"
+            timestampString = "571149088.066076"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "66"
@@ -1146,11 +1146,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Carwash/Api/RestApi.swift"
-            timestampString = "571020675.675972"
+            timestampString = "571323795.1101021"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "321"
-            endingLineNumber = "321"
+            startingLineNumber = "330"
+            endingLineNumber = "330"
             landmarkName = "apiFindWashersArround(token:radius:latitude:longitude:onSuccessCallback:onFailureCallback:)"
             landmarkType = "7">
             <Locations>
@@ -1194,7 +1194,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Carwash/Controllers/Tab5ProfileViewController.swift"
-            timestampString = "570982683.804068"
+            timestampString = "571149088.06656"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "65"
@@ -1206,15 +1206,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Carwash/Api/RestApi.swift"
-            timestampString = "571020675.676488"
+            timestampString = "571323795.1102509"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "186"
-            endingLineNumber = "186"
+            startingLineNumber = "187"
+            endingLineNumber = "187"
             landmarkName = "addServiceToWasher(req:onSuccessCallback:onFailureCallback:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1226,7 +1226,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Carwash/Controllers/Tab5ProfileViewController.swift"
-            timestampString = "570982683.8041739"
+            timestampString = "571149088.0669709"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "181"
@@ -1242,13 +1242,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Carwash/Controllers/LoginViewController.swift"
-            timestampString = "570982683.80427"
+            timestampString = "571149088.067062"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "80"
             endingLineNumber = "80"
-            landmarkName = "didSuccessLogin()"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1290,11 +1290,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Carwash/Controllers/WasherProfileViewController.swift"
-            timestampString = "570982683.804556"
+            timestampString = "571708506.800302"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1306,7 +1306,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Carwash/Controllers/CreateAccountViewController.swift"
-            timestampString = "571020675.67775"
+            timestampString = "571146119.917918"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "440"
@@ -1322,7 +1322,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Carwash/Controllers/CreateAccountViewController.swift"
-            timestampString = "571020675.679028"
+            timestampString = "571146119.918996"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "441"
@@ -1338,11 +1338,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Carwash/Api/RestApi.swift"
-            timestampString = "571020675.679931"
+            timestampString = "571323795.1104831"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "531"
-            endingLineNumber = "531"
+            startingLineNumber = "540"
+            endingLineNumber = "540"
             landmarkName = "getAddressByCep(inputCep:onSuccessCallback:onFailureCallback:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1354,11 +1354,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Carwash/Api/RestApi.swift"
-            timestampString = "571020675.680106"
+            timestampString = "571323795.110599"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "536"
-            endingLineNumber = "536"
+            startingLineNumber = "545"
+            endingLineNumber = "545"
             landmarkName = "getAddressByCep(inputCep:onSuccessCallback:onFailureCallback:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1370,11 +1370,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Carwash/Api/RestApi.swift"
-            timestampString = "571020675.680258"
+            timestampString = "571323795.110724"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "263"
-            endingLineNumber = "263"
+            startingLineNumber = "272"
+            endingLineNumber = "272"
             landmarkName = "listOrderByUser(token:onSuccessCallback:onFailureCallback:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1386,11 +1386,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Carwash/Api/RestApi.swift"
-            timestampString = "571020675.680403"
+            timestampString = "571323795.110828"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "530"
-            endingLineNumber = "530"
+            startingLineNumber = "539"
+            endingLineNumber = "539"
             landmarkName = "getAddressByCep(inputCep:onSuccessCallback:onFailureCallback:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1402,7 +1402,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Carwash/Controllers/CreateAccountViewController.swift"
-            timestampString = "571020675.680536"
+            timestampString = "571146119.919932"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "444"
@@ -1418,13 +1418,77 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Carwash/Api/RestApi.swift"
-            timestampString = "571020675.6814229"
+            timestampString = "571323795.11094"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "532"
-            endingLineNumber = "532"
+            startingLineNumber = "541"
+            endingLineNumber = "541"
             landmarkName = "getAddressByCep(inputCep:onSuccessCallback:onFailureCallback:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Carwash/Controllers/Tab5ProfileViewController.swift"
+            timestampString = "571149088.069007"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "204"
+            endingLineNumber = "204"
+            landmarkName = "addSpecificPrize(sender:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Carwash/Controllers/Tab5ProfileViewController.swift"
+            timestampString = "571149088.0690809"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "235"
+            endingLineNumber = "235"
+            landmarkName = "addSpecificPrize(sender:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 () -&gt; () in Carwash.Tab5ProfileViewController.addSpecificPrize(sender: __C.UIButton) -&gt; ()"
+                  moduleName = "Carwash"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bluecore/Desktop/CarWash/app/Carwash/Controllers/Tab5ProfileViewController.swift"
+                  timestampString = "571147952.5864379"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "235"
+                  endingLineNumber = "235"
+                  offsetFromSymbolStart = "1408">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Carwash.ResponseDefault) -&gt; () in closure #2 () -&gt; () in Carwash.Tab5ProfileViewController.addSpecificPrize(sender: __C.UIButton) -&gt; ()"
+                  moduleName = "Carwash"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bluecore/Desktop/CarWash/app/Carwash/Controllers/Tab5ProfileViewController.swift"
+                  timestampString = "571147952.590193"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "237"
+                  endingLineNumber = "237"
+                  offsetFromSymbolStart = "68">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

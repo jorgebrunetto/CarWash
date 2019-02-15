@@ -607,7 +607,7 @@
 			baseConfigurationReference = 4FFFD81E42AAAD54DAEBD3D4 /* Pods-Carwash.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Augusto Camargo (6HCU7NNRB6)";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 6HCU7NNRB6;
 				INFOPLIST_FILE = Carwash/Info.plist;
@@ -619,7 +619,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.br.ios.Carwash;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "ba4cf3f0-838f-4d89-9900-368f81707b35";
-				PROVISIONING_PROFILE_SPECIFIER = CarWashDev;
+				PROVISIONING_PROFILE_SPECIFIER = HockeyCarWash;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -630,7 +630,7 @@
 			baseConfigurationReference = 5B2C7B7DEBE65FBE7C4C84F7 /* Pods-Carwash.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Augusto Camargo (6HCU7NNRB6)";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 6HCU7NNRB6;
 				INFOPLIST_FILE = Carwash/Info.plist;
@@ -642,7 +642,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.br.ios.Carwash;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "ba4cf3f0-838f-4d89-9900-368f81707b35";
-				PROVISIONING_PROFILE_SPECIFIER = CarWashDev;
+				PROVISIONING_PROFILE_SPECIFIER = HockeyCarWash;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

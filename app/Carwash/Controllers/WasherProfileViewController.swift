@@ -24,6 +24,7 @@ class WasherProfileViewController: UIViewController,UITableViewDelegate,UITableV
     @IBOutlet weak var viewLoading:UIView!
     @IBOutlet weak var spinnerLoading:UIActivityIndicatorView!
     
+    @IBOutlet weak var navigationBar:UINavigationBar!
     
     
     @IBAction func back(){
@@ -63,9 +64,14 @@ class WasherProfileViewController: UIViewController,UITableViewDelegate,UITableV
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+
         availableServices = [ResponseItemService]()
         imgView.layer.cornerRadius = 0.5 * 90;
         
+        if washerItem.Name != nil{
+            navigationBar.topItem?.title = washerItem.Name
+        }
         let name = washerItem.Name?.replacingOccurrences(of: " ", with: "+")
         let url = URL(string: "https://ui-avatars.com/api/?rounded=true&font-size=0.33&name=\(name ?? "")")
         

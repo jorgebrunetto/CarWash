@@ -258,7 +258,7 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Carwash" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E5M-Ob-69Q">
-                                        <rect key="frame" x="126.5" y="10.5" width="67" height="23"/>
+                                        <rect key="frame" x="126.5" y="12" width="67" height="20"/>
                                         <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="17"/>
                                         <color key="textColor" red="0.36470588240000001" green="0.35294117650000001" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -1437,6 +1437,7 @@
                         <outlet property="imgView" destination="EXh-1d-CYr" id="AZP-D2-8y5"/>
                         <outlet property="labelScore" destination="KPe-qj-MtQ" id="HvM-2J-pey"/>
                         <outlet property="labelTotalWashs" destination="eAa-94-a05" id="tTM-cp-R2W"/>
+                        <outlet property="navigationBar" destination="kpA-GK-drE" id="G91-9m-3uI"/>
                         <outlet property="spinnerLoading" destination="mNz-uK-sxK" id="Uli-fg-1vl"/>
                         <outlet property="tableView" destination="PRD-BS-na6" id="0f0-XE-P5J"/>
                         <outlet property="viewLoading" destination="bBH-8g-ODB" id="RBm-pK-42h"/>
@@ -2006,7 +2007,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fnz-xE-NsV">
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fnz-xE-NsV">
                                         <rect key="frame" x="189" y="218" width="123" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="123" id="45o-Od-ijg"/>

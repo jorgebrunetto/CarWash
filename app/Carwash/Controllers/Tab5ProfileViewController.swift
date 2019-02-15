@@ -207,7 +207,7 @@ class Tab5ProfileViewController: UIViewController,UITableViewDelegate,UITableVie
         // open popup com caixa texto numerica
         
         // Create a custom view controller
-        let addSpecificVC = AddSpecificPrizeViewController(nibName: "AddSpecificPrizeViewController", bundle: nil)
+        let addSpecificVC = AddSpecificPrizeViewController(nibName: "ServicePrizeViewController", bundle: nil)
         
         
         // Create the dialog
