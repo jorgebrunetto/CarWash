@@ -67,6 +67,7 @@ class CreateAccountViewController: UIViewController,UITextFieldDelegate,UITableV
             editText.isSecureTextEntry = false
             editText.titleLabel.tag = indexPath.row;
             editText.delegate =  self
+            editText.text = ""
             editText.isUserInteractionEnabled = false
             if(requestUser.RoleId == 1){
                 editText.text = "Cliente"
@@ -74,9 +75,9 @@ class CreateAccountViewController: UIViewController,UITextFieldDelegate,UITableV
             else if(requestUser.RoleId == 2){
                 editText.text = "Lavador"
             }
-            else if(requestUser.RoleId == 3){
-                editText.text = "Lava rápido"
-            }
+            //else if(requestUser.RoleId == 3){
+            //    editText.text = "Lava rápido"
+            //}
             else{
                 editText.text = "Selecione um Perfil"
             }
@@ -90,8 +91,7 @@ class CreateAccountViewController: UIViewController,UITextFieldDelegate,UITableV
             editText.placeholder = "Nome"
             editText.selectedTitle = "Nome"
             editText.title = "Nome"
-     
-
+            editText.text = ""
             editText.isSecureTextEntry = false
             editText.keyboardType = UIKeyboardType.namePhonePad
             editText.delegate = self
@@ -111,7 +111,7 @@ class CreateAccountViewController: UIViewController,UITextFieldDelegate,UITableV
             editText.placeholder = "E-mail"
             editText.selectedTitle = "E-mail"
             editText.title = "E-mail"
-    
+            editText.text = ""
             editText.isSecureTextEntry = false
             editText.keyboardType = UIKeyboardType.emailAddress
             editText.delegate = self
@@ -126,12 +126,11 @@ class CreateAccountViewController: UIViewController,UITextFieldDelegate,UITableV
             let imgView = cell?.viewWithTag(1) as! UIImageView
             let editText = cell?.viewWithTag(2) as! SkyFloatingLabelTextField
 
-
             imgView.image = UIImage(named: "lock")
             editText.placeholder = "Senha"
             editText.selectedTitle = "Senha"
             editText.title = "Senha"
-            
+            editText.text = ""
             editText.isSecureTextEntry = true
             editText.keyboardType = UIKeyboardType.default
             editText.delegate = self
@@ -151,7 +150,7 @@ class CreateAccountViewController: UIViewController,UITextFieldDelegate,UITableV
             editText.placeholder = "Documento"
             editText.selectedTitle = "Documento"
             editText.title = "Documento"
-
+            editText.text = ""
             editText.isSecureTextEntry = false
             editText.keyboardType = UIKeyboardType.namePhonePad
             editText.delegate = self
@@ -173,6 +172,7 @@ class CreateAccountViewController: UIViewController,UITextFieldDelegate,UITableV
             editText.title = "Data Nascimento"
             editText.isSecureTextEntry = false
             editText.delegate = self
+            editText.text = ""
             editText.isUserInteractionEnabled = false
             editText.titleLabel.tag = indexPath.row;
             editText.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
@@ -193,7 +193,7 @@ class CreateAccountViewController: UIViewController,UITextFieldDelegate,UITableV
             editText.delegate = self
             editText.selectedTitle = "Cep"
             editText.title = "Cep"
-
+            editText.text = ""
             editText.isSecureTextEntry = false
             editText.keyboardType = UIKeyboardType.numberPad
             editText.delegate = self
@@ -212,7 +212,7 @@ class CreateAccountViewController: UIViewController,UITextFieldDelegate,UITableV
             editText.placeholder = "Endereço"
             editText.selectedTitle = "Endereço"
             editText.title = "Endereço"
-
+            editText.text = ""
             editText.isSecureTextEntry = false
             editText.keyboardType = UIKeyboardType.namePhonePad
             editText.delegate = self
@@ -231,7 +231,7 @@ class CreateAccountViewController: UIViewController,UITextFieldDelegate,UITableV
             editText.placeholder = "Número"
             editText.selectedTitle = "Número"
             editText.title = "Número"
-
+            editText.text = ""
             editText.isSecureTextEntry = false
             editText.keyboardType = UIKeyboardType.numberPad
             editText.delegate = self
@@ -251,7 +251,7 @@ class CreateAccountViewController: UIViewController,UITextFieldDelegate,UITableV
             editText.placeholder = "Complemento"
             editText.selectedTitle = "Complemento"
             editText.title = "Complemento"
-
+            editText.text = ""
             editText.isSecureTextEntry = false
             editText.keyboardType = UIKeyboardType.namePhonePad
             editText.delegate = self
@@ -271,7 +271,7 @@ class CreateAccountViewController: UIViewController,UITextFieldDelegate,UITableV
             editText.placeholder = "Bairro"
             editText.selectedTitle = "Bairro"
             editText.title = "Bairro"
-      
+            editText.text = ""
             editText.isSecureTextEntry = false
             editText.keyboardType = UIKeyboardType.namePhonePad
             editText.delegate = self
@@ -291,7 +291,7 @@ class CreateAccountViewController: UIViewController,UITextFieldDelegate,UITableV
             editText.placeholder = "Cidade"
             editText.selectedTitle = "Cidade"
             editText.title = "Cidade"
-    
+            editText.text = ""
             editText.isSecureTextEntry = false
             editText.keyboardType = UIKeyboardType.namePhonePad
             editText.delegate = self
@@ -314,6 +314,7 @@ class CreateAccountViewController: UIViewController,UITextFieldDelegate,UITableV
             editText.text = "Selecione um Estado"
             editText.delegate =  self
             editText.isUserInteractionEnabled = false
+            editText.text = ""
             if requestUser.State != nil{
                 if requestUser.State != ""{
                     editText.text = requestUser.State
@@ -332,9 +333,10 @@ class CreateAccountViewController: UIViewController,UITextFieldDelegate,UITableV
             editText.title = "Celular"
 
             editText.isSecureTextEntry = false
-            editText.keyboardType = UIKeyboardType.numberPad
+            editText.keyboardType = UIKeyboardType.emailAddress
             editText.delegate = self
             editText.titleLabel.tag = indexPath.row;
+            editText.text = ""
             editText.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
             if requestUser.PhoneNumber != nil{
                 editText.text = requestUser.PhoneNumber
@@ -357,7 +359,7 @@ class CreateAccountViewController: UIViewController,UITextFieldDelegate,UITableV
         
         if indexPath.row == 0{
             //role
-            ActionSheetStringPicker.show(withTitle: "Perfil:", rows: ["Cliente", "Lavador", "Lava-rápido"], initialSelection: 0, doneBlock: {
+            ActionSheetStringPicker.show(withTitle: "Perfil:", rows: ["Cliente", "Lavador", /*"Lava-rápido"*/], initialSelection: 0, doneBlock: {
                 picker, value, index in
                 
                 self.requestUser.RoleId = value + 1
@@ -427,7 +429,7 @@ class CreateAccountViewController: UIViewController,UITextFieldDelegate,UITableV
     }
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         let field = textField as! SkyFloatingLabelTextField
-        if field.titleLabel.tag == 0 || field.titleLabel.tag == 5 || field.titleLabel.tag == 12 || field.titleLabel.tag == 7 || field.titleLabel.tag == 10 || field.titleLabel.tag == 11{
+        if field.titleLabel.tag == 0 || field.titleLabel.tag == 5 || field.titleLabel.tag == 12{
             return false
         }
         return true
@@ -436,7 +438,15 @@ class CreateAccountViewController: UIViewController,UITextFieldDelegate,UITableV
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
         let edittext = textField as! SkyFloatingLabelTextField
-        if edittext.titleLabel.tag == 6{
+        if edittext.titleLabel.tag == 13{
+            if string == ""{
+                return true
+            }
+            if Int(string) == nil {
+                return false
+            }
+        }
+        else if edittext.titleLabel.tag == 6{
             if range.location == 7{
                 let api = RestApi()
                 api.getAddressByCep(inputCep: textField.text!+string, onSuccessCallback: { (responseCep) -> (Void) in
@@ -458,6 +468,9 @@ class CreateAccountViewController: UIViewController,UITextFieldDelegate,UITableV
                     }
                     if responseCep.uf != nil{
                         self.requestUser.State = responseCep.uf
+                    }
+                    if responseCep.bairro != nil{
+                        self.requestUser.District = responseCep.bairro
                     }
                     self.tableView.reloadData()
                 }) { (responseError) -> (Void) in
@@ -620,6 +633,7 @@ class CreateAccountViewController: UIViewController,UITextFieldDelegate,UITableV
         }
         else {
             let api = RestApi()
+            requestUser.Cep = requestUser.Cep?.replacingOccurrences(of: "-", with: "")
             api.registerUser(req: requestUser, onSuccessCallback: { (response) -> (Void) in
                 
                 self.loadingView.isHidden = true

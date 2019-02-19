@@ -9,6 +9,16 @@ import UIKit
 
 class ManagerTabController: UITabBarController {
 
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+
+        if appDelegate.addedService{
+            self.selectedIndex = 1
+            appDelegate.addedService = false
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 

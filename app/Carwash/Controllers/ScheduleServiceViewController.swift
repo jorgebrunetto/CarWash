@@ -92,7 +92,10 @@ class ScheduleServiceViewController: UIViewController,UITableViewDelegate,UITabl
                 api.createOrder(req: request, onSuccessCallback: { (successMessage) -> (Void) in
                     let alert = UIAlertController(title: "Sucesso", message: Messages.CREATE_ORDER_SUCCESS, preferredStyle: UIAlertController.Style.alert)
                     alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: {(alert: UIAlertAction!) in
-                        self.navigationController?.popToRootViewController(animated: true)
+                        let viewControllers: [UIViewController] = self.navigationController!.viewControllers as [UIViewController]
+                        self.navigationController!.popToViewController(viewControllers[1], animated: true)
+                        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                        appDelegate.addedService = true
                     }))
                     self.present(alert, animated: true, completion: nil)
                     
@@ -104,7 +107,6 @@ class ScheduleServiceViewController: UIViewController,UITableViewDelegate,UITabl
                 }
             }
         }
-        
     }
     
     override func viewDidLoad() {

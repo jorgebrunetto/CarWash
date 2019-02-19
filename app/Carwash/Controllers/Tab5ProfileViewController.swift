@@ -289,12 +289,62 @@ class Tab5ProfileViewController: UIViewController,UITableViewDelegate,UITableVie
                     ActionSheetStringPicker.show(withTitle: "Serviço:", rows: mItems, initialSelection: 0, doneBlock: {
                         picker, value, index in
                         
+                        // open popup com caixa texto numerica
+                        
+                        // Create a custom view controller
+                        let addSpecificVC = AddSpecificPrizeViewController(nibName: "ServicePrizeViewController", bundle: nil)
+                        
+                        
+                        // Create the dialog
+                        let popup = PopupDialog(viewController: addSpecificVC,
+                                                buttonAlignment: .horizontal,
+                                                transitionStyle: .bounceDown,
+                                                tapGestureDismissal: true,
+                                                panGestureDismissal: false)
+                        
+                        // Create first button
+                        let buttonOne = CancelButton(title: "CANCELAR", height: 60) {
+                            
+                        }
+                        
+                        // Create second button
+                        let buttonTwo = DefaultButton(title: "ADICIONAR", height: 60) {
+                            
+                            self.showLoading()
+                            
+                            let api = RestApi()
+                            let request = RequestServiceToWasher()
+                            request.Token = UserSession.sharedInstance.resultLogin.Token
+                            request.ServiceId = temp[value].ServiceId
+                            request.SpecificPrice = Double(addSpecificVC.editSpecificPrize.text!)
+                            api.addServiceToWasher(req: request, onSuccessCallback: { (response) -> (Void) in
+                                // se ok, update list
+                               
+                                self.stopLoading()
+                                temp[value].SpecificPrice = Int(addSpecificVC.editSpecificPrize.text!)
+                                self.myServices.append(temp[value])
+                                self.NUMBER_SERVICES = self.myServices.count
+                                self.tableView.reloadData()
+                            }, onFailureCallback: { (messageError) -> (Void) in
+                                self.stopLoading()
+                                let alert = UIAlertController(title: "Erro", message: messageError, preferredStyle: UIAlertController.Style.alert)
+                                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+                                self.present(alert, animated: true, completion: nil)
+                            })
+                        }
+                        
+                        // Add buttons to dialog
+                        popup.addButtons([buttonOne, buttonTwo])
+                        
+                        // Present dialog
+                        self.present(popup, animated: true, completion: nil)
+                        
                         // Cadastra servico
-                        let api = RestApi()
+                        /*let api = RestApi()
                         let request = RequestServiceToWasher()
                         request.Token = UserSession.sharedInstance.resultLogin.Token
                         request.ServiceId = temp[value].ServiceId
-                        request.SpecificPrice = 5
+                        //request.SpecificPrice = 5
                         api.addServiceToWasher(req: request, onSuccessCallback: { (response) -> (Void) in
                             // se ok, add na lista
                             self.myServices.append(temp[value])
@@ -304,7 +354,7 @@ class Tab5ProfileViewController: UIViewController,UITableViewDelegate,UITableVie
                             let alert = UIAlertController(title: "Erro", message: messageError, preferredStyle: UIAlertController.Style.alert)
                             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
                             self.present(alert, animated: true, completion: nil)
-                        })
+                        })*/
                     
                         
                         //print("value = \(value)")

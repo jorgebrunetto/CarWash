@@ -13,7 +13,7 @@ class RequestServiceToWasher: Mappable {
     
     var Token:String?
     var ServiceId:Int!
-    var SpecificPrice:Double!
+    var SpecificPrice:Double?
  
     init(){
         
@@ -23,7 +23,7 @@ class RequestServiceToWasher: Mappable {
         
         Token = try? map.value("Token")
         
-        SpecificPrice = try! map.value("SpecificPrice")
+        SpecificPrice = try? map.value("SpecificPrice")
     }
     
     func mapping(map: Map) {

@@ -118,6 +118,11 @@ class RestApi: NSObject {
                                 else{
                                     result?.Result = Messages.CANT_COMPLETE_REQUEST
                                 }
+                                if result?.Result != nil{
+                                    if (result?.Result?.contains("for key 'Document'"))!{
+                                        result?.Result = Messages.DOCUMENT_ALREADY_EXISTS
+                                    }
+                                }
                                 onFailureCallback((result?.Result)!)
                             }
                         }
@@ -202,7 +207,8 @@ class RestApi: NSObject {
                     }
                     else{
                         if result?.Result != nil{
-                            onFailureCallback((result?.Result!)!)
+                            onFailureCallback(Messages.CANNOT_UPDATE_VALUE)
+                            //onFailureCallback((result?.Result!)!)
                         }
                         else{
                             onFailureCallback(Messages.CANT_COMPLETE_REQUEST)
@@ -536,7 +542,8 @@ class RestApi: NSObject {
     func getAddressByCep(inputCep:String, onSuccessCallback: @escaping (ResponseViaCep) -> (Void), onFailureCallback: @escaping (String) -> (Void)){
        // https://viacep.com.br/ws/13312280/json/
     
-        let url  = "https://viacep.com.br/ws/\(inputCep)/json"
+        let cep  = inputCep.replacingOccurrences(of: "-", with: "")
+        let url  = "https://viacep.com.br/ws/\(cep)/json"
         Alamofire
             .request(url, method: .get, parameters: nil  , encoding: JSONEncoding.default, headers: nil)
             .validate(contentType: ["application/json"])

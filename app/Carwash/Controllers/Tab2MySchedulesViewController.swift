@@ -50,7 +50,7 @@ class Tab2MySchedulesViewController: UIViewController, UITableViewDataSource, UI
             
             self.stopLoading()
             
-            self.listOrders = response.Result!
+            self.listOrders = response.Result!.reversed()
             self.tableView.reloadData()
             
         }) { (errorMessage) -> (Void) in

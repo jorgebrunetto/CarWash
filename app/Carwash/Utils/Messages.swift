@@ -39,4 +39,6 @@ class Messages: NSObject {
     static let FILL_STATE = "Informe um Estado."
     static let FILL_PHONE_NUMBER = "Informe um Número de Celular."
     static let INVALID_PHONE_NUMBER = "Número de Celular inválido."
+    static let CANNOT_UPDATE_VALUE = "Não é possível alterar preço."
+    static let DOCUMENT_ALREADY_EXISTS = "Este documento já foi registrado"
 }

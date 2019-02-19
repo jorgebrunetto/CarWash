@@ -26,9 +26,9 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
         editPassword.isSecureTextEntry = true
         editEmail.delegate = self
         editPassword.delegate = self
-        
-        editEmail.text = "jorge.brunetto@hotmail.com"
-        editPassword.text = "123456c@"
+        editEmail.keyboardType = UIKeyboardType.emailAddress
+        //editEmail.text = "jorge.brunetto@hotmail.com"
+        //editPassword.text = "123456c@"
         
         loadingView.isHidden = true
     }

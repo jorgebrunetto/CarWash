@@ -30,8 +30,12 @@ class MapViewController: UIViewController,MKMapViewDelegate{
         mapView.setRegion(region, animated: true)
     }
     
+    func clear(){
+        mapView.removeAnnotations(mapView.annotations)
+    }
     func onSuccessGetWashers(list:[ResponseWashers]){
         
+        clear()
         for item in list{
             let annotation = AnnotationWasher()
             annotation.coordinate = CLLocationCoordinate2D(latitude: (item.Latitude! as NSString).doubleValue, longitude: (item.Longitude! as NSString).doubleValue)
@@ -55,9 +59,12 @@ class MapViewController: UIViewController,MKMapViewDelegate{
         
         if let pin = view.annotation as? AnnotationWasher
         {
-            detailsVC.washerItem = pin.itemWasher
+            if pin.itemWasher != nil{
+                detailsVC.washerItem = pin.itemWasher
+                self.navigationController?.pushViewController(detailsVC, animated: true)
+            }
         }
-        self.navigationController?.pushViewController(detailsVC, animated: true)
+       
     }
     
     

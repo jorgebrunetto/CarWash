@@ -36,6 +36,7 @@ class Tab1MapViewController: UIViewController,CLLocationManagerDelegate {
     var locationManager:CLLocationManager!
     var location:CLLocation?
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
